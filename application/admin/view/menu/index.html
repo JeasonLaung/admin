@@ -1,0 +1,130 @@
+<div class="wrapper">
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="btn btn-warning" href="{:url('admin/menu/addmenu')}" style="margin:15px 0;">添加菜单</a>
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">系统菜单列表</h3>
+              <div class="box-tools">
+                <form method="get">
+                  <div class="input-group input-group-sm" style="width:250px;">
+                    <input type="text" name="search_key" class="form-control pull-right" placeholder="搜索菜单名称" value="{$search_key|default=''}">
+                    <div class="input-group-btn">
+                      <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                      <a class="btn btn-default btn-xs" href="{:url('admin/menu/index')}"><i class="fa fa-refresh"></i>&nbsp;清除搜索</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tr>
+                  <th>ID</th>
+                  <th>栏目名称</th>
+                  <th>菜单级别</th>
+                  <th>链接</th>
+                  <th>排序</th>
+                  <th>菜单类型</th>
+                  <th>显示状态</th>
+                  <th>操作</th>
+                </tr>
+                {volist name="list" id="vo"}
+                <tr>
+                  <td>{$vo.id}</td>
+                  <td>{$vo.name}</td>
+                  <td>
+                    {eq name="vo.pid" value="0"}
+                    顶级栏目
+                    {else/}
+                    子栏目
+                    {/eq}
+                  </td>
+                  <td>
+                    {notempty name="vo.url"}
+                    {$vo.url}
+                    {/notempty}
+                  </td>
+                  <td>
+                    <span class="label label-primary">
+                      {$vo.sort}
+                    </span>
+                  </td>
+                  <td>
+                    {eq name="vo.type" value="1"}
+                    可访问菜单
+                    {else/}
+                    只作为菜单
+                    {/eq}
+                  </td>
+                  <td>
+                    {eq name="vo.status" value="1"}
+                    <span class="label label-warning">隐藏</span>
+                    {else/}
+                    <span class="label label-success">显示</span>
+                    {/eq}
+                  </td>
+                  <td>
+                    <div class="btn-group">
+                      <a class="btn btn-default btn-xs" href="{:url('admin/menu/edit',array('id'=>$vo['id']))}"><i
+                          class="fa fa-edit"></i>&nbsp;编辑</a>
+                      <a class="btn btn-default btn-xs" onclick="return del('{$vo.id}',this)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                    </div>
+                  </td>
+                </tr>
+                {/volist}
+              </table>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <div class="col-sm-7" style="text-align: right;float:right;">
+                {$list->render()|raw}
+              </div>
+            </div>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+
+  function del(id,obj) {
+    var confirm = $("#confirm");
+    var callback = $("#callback");
+    confirm.find('.inf').html("确定删除该菜单吗？");
+    confirm.modal('show');
+    confirm.find('#del_act').click(
+      function () {
+        confirm.modal('hide');
+        $.ajax({
+          url: "{:url('admin/menu/delete')}",
+          data: { 'id': id},
+          type: 'post',
+          success: function (res) {
+            callback.find('.inf').html(res.msg);
+            callback.modal('show');
+              if(!res.code){
+                  callback.on('hide.bs.modal', function (event) {
+                      $(obj).parent().parent().parent().remove()
+                  })
+              }
+          },
+          dataType: 'json',
+          error: function () {
+            $('#submit').removeClass('disable')
+            callback.find('.inf').html('系统错误');
+            callback.modal('show');
+          }
+        });
+      }
+    );
+    return false;
+  }
+</script>

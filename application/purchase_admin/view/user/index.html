@@ -1,0 +1,130 @@
+<div class="wrapper">
+    <div class="content-wrapper">
+
+        <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <a class="btn btn-warning" href="{:url('purchase_admin/user/create')}" style="margin:15px 0;">添加用户</a>
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">用户</h3>
+                        <div class="box-tools">
+                            <form method="get">
+
+                                <div class="input-group input-group-sm" style="width:350px;">
+                                    <select class="form-control pull-left" style="width: 80px;" id="changeType">
+                                        <option value=''>全部</option>
+                                        <option value='1' {if $p_role == 1}selected{/if}>分销商</option>
+                                        <option value='2' {if $p_role == 2}selected{/if}>供应商</option>
+                                        <option value='3' {if $p_role == 3}selected{/if}>葡萄员工</option>
+                                    </select>
+                                    <input type="text" name="key_word" style="width: 135px" class="form-control pull-right" placeholder="搜索文章标题" value="{$key_word|default=''}">
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                        <a class="btn btn-default btn-xs" href="{:url('purchase_admin/user/index')}"><i class="fa fa-refresh"></i>&nbsp;清除搜索</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>名字</th>
+                                <th>手机号</th>
+                                <th>角色</th>
+                                <th>状态</th>
+                                <th>账户创建时间</th>
+                                <th>操作</th>
+                            </tr>
+                            {volist name="list" id="vo"}
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.phone}</td>
+                                <td>
+                                    {if $vo.p_role==0}
+                                        <span class="label label-default">普通</span>
+                                        {elseif $vo.p_role==1/}
+                                        <span class="label label-warning">分销商</span>
+                                        {elseif $vo.p_role==2/}
+                                        <span class="label label-danger">供应商</span>
+                                        {elseif $vo.p_role==2/}
+                                        <span class="label label-success">葡萄员工</span>
+
+                                    {/if}
+                                </td>
+                                <td>
+                                    {if $vo.status==1}
+                                    <span class="label label-warning">有效</span>
+                                    {elseif $vo.status==1/}
+                                    <span class="label label-success">禁用</span>
+                                    {/if}
+                                </td>
+                                
+                                <td style="max-width: 200px;overflow: hidden;">{$vo.createtime | date='Y-m-d H:i'}</td>
+
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default btn-xs" href="{:url('purchase_admin/user/edit',array('id'=>$vo['id']))}"><i
+                                                class="fa fa-edit"></i>&nbsp;编辑</a>
+                                        <a class="btn btn-default btn-xs" onclick="return del('{$vo.id}',this)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                        <div class="col-sm-7" style="text-align: right;float:right;">
+                            {$list->render()|raw}
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+<script>
+    $('#changeType').change(function (e) {
+        window.location = '{:url()}?{if $key_word}key_word={$key_word}&{/if}p_role='+$(this).val()
+    })
+    function del(id,obj) {
+        var confirm = $("#confirm");
+        var callback = $("#callback");
+        confirm.find('.inf').html("<b>确定删除该用户吗？</b>");
+        confirm.modal('show');
+        confirm.find('#del_act').click(
+            function () {
+                confirm.modal('hide');
+                $.ajax({
+                    url: "{:url('purchase_admin/user/delete')}",
+                    data: { 'id': id},
+                    type: 'post',
+                    success: function (res) {
+                        callback.find('.inf').html(res.msg);
+                        callback.modal('show');
+                        if(res.status){
+                            callback.on('hide.bs.modal', function (event) {
+                                $(obj).parent().parent().parent().remove()
+                            })
+                        }
+                    },
+                    dataType: 'json',
+                    error: function () {
+                        $('#submit').removeClass('disable')
+                        callback.find('.inf').html('系统错误');
+                        callback.modal('show');
+                    }
+                });
+            }
+        );
+        return false;
+    }
+</script>
+

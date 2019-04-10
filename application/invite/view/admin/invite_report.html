@@ -1,0 +1,63 @@
+
+<style>
+    .pj-btn{
+        min-width:52px;
+    }
+</style>
+<div class="wrapper">
+    <div class="content-wrapper">
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div style="height:30px;"></div>
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">邀约报表</h3>
+                            <div class="box-tools">
+                                <div class="input-group input-group-sm">
+                                    <select name="status" class="form-control select2" style="width: 80px;" onchange="goType(this)">
+                                        {foreach name="option" item="vo" key="k"}
+                                            <option value="{$k}" {$k==$type?'selected':''}>{$vo}</option>
+                                        {/foreach}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tr>
+                                    <th>销售</th>
+                                    <th>到店</th>
+                                    <th>拜访</th>
+                                    <th>成交</th>
+                                    <th>战败</th>
+                                    <th>未成交</th>
+                                </tr>
+                                {volist name="list" id="vo"}
+                                <tr>
+                                    <td>{$vo.admin_name}</td>
+                                    <td>{$vo['come_num']?:0}</td>
+                                    <td>{$vo['go_num']?:0}</td>
+                                    <td>{$vo['deal_num']?:0}</td>
+                                    <td>{$vo['fail_num']?:0}</td>
+                                    <td>{$vo['not_deal_num']?:0}</td>
+                                </tr>
+                                {/volist}
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script>
+    function goType(ele){
+        var value = $(ele).val();
+        window.location.href = '{:url("invite/admin/invite_report")}?type='+value;
+    }
+</script>
+

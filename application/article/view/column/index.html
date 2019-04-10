@@ -1,0 +1,113 @@
+<div class="wrapper">
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="btn btn-warning" href="{:url('article/column/addcolumn')}" style="margin:15px 0;">添加栏目</a>
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">文章栏目列表</h3>
+              <!--<div class="box-tools">-->
+                <!--<form method="get">-->
+                  <!--<div class="input-group input-group-sm" style="width:250px;">-->
+                    <!--<input type="text" name="search_key" class="form-control pull-right" placeholder="搜索栏目名称" value="{$search_key|default=''}">-->
+                    <!--<div class="input-group-btn">-->
+                      <!--<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>-->
+                      <!--<a class="btn btn-default btn-xs" href="{:url('article/column/index')}"><i class="fa fa-refresh"></i>&nbsp;清除搜索</a>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</form>-->
+              <!--</div>-->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <div style="min-width: 550px;padding: 0 10px">
+                <div class="column_back">
+                  <div class="column_info">
+                    <span style="width: 100px">ID</span>
+                    <span>栏目图标</span>
+                    <span class="width_auto">栏目名称</span>
+                    <span>栏目级别</span>
+                    <span>排序</span>
+                    <span>栏目类型</span>
+                    <span>显示状态</span>
+                    <span>操作</span>
+                  </div>
+                </div>
+              {$list|raw}
+              </div>
+            </div>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="hides"></div>
+<div class="show_image_back">
+  <div class="show_image">
+    <img class="show_image_info">
+  </div>
+</div>
+
+<script>
+  function del(id,obj) {
+    var confirm = $("#confirm");
+    var callback = $("#callback");
+    confirm.find('.inf').html("确定删除该栏目吗？");
+    confirm.modal('show');
+    confirm.find('#del_act').click(
+      function () {
+        confirm.modal('hide');
+        $.ajax({
+          url: "{:url('article/column/deletecolumn')}",
+          data: {'id': id},
+          type: 'post',
+          success: function (res) {
+            callback.find('.inf').html(res.msg);
+            callback.modal('show');
+              if(!res.code){
+                  callback.on('hide.bs.modal', function (event) {
+                      $(obj).parent().parent().parent().remove()
+                  })
+              }
+          },
+          dataType: 'json',
+          error: function () {
+            $('#submit').removeClass('disable')
+            callback.find('.inf').html('系统错误');
+            callback.modal('show');
+          }
+        });
+      }
+    );
+    return false;
+  }
+
+  $('.show_hide').on('click',function(){
+      var child = $(this).parent().parent().parent().children('.column_child');
+      if(child !== undefined){
+          if(child.css('display') === 'none'){
+              child.slideDown(100)
+              $(this).val('-')
+          }else{
+              child.slideUp(100)
+              $(this).val('+')
+          }
+      }
+
+  })
+
+   $(function(){
+       $('.column_icon').on('click',function(){
+           $('.show_image_info').attr('src', $(this).attr('src'))
+          $('.show_image_back,.hides').fadeIn(200)
+       })
+
+      $('.show_image').on('click',function(){
+          $('.show_image_back,.hides').fadeOut(200)
+      })
+   })
+</script>

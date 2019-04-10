@@ -1,0 +1,125 @@
+
+<style>
+    .pj-btn{
+        min-width:52px;
+    }
+</style>
+<div class="wrapper">
+    <div class="content-wrapper">
+        <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div style="min-height:30px;">
+                    {notempty name='is_sale'}
+                    <a class="btn btn-warning" href="{:url('invite/admin/invite_add')}" style="margin:15px 0;">添加客户</a>
+                    {/notempty}
+                </div>
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">客户列表</h3>
+                        <div class="box-tools">
+                            <form method="get">
+                                <div class="input-group input-group-sm" style="width:330px;">
+                                    <select name="status" class="form-control select2" style="width: 70px;">
+                                        <option value="">全部</option>
+                                        {foreach name="option" item="vo" key="k"}
+                                        <option value="{$k}" {$k===$status?'selected':''}>{$vo}</option>
+                                        {/foreach}
+                                    </select>
+                                    <input type="text" name="search_key" style="width: 145px" class="form-control" placeholder="搜索名字/微信/电话" value="{$search_key}">
+                                    <button type="submit" class="form-control btn btn-default" style="width: 35px;"><i class="fa fa-search"></i></button>
+                                    <a class="form-control btn btn-default btn-xs" href="{:url('invite/admin/invite_list')}" style="width: 80px;"><i class="fa fa-refresh"></i>&nbsp;清除搜索</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>姓名</th>
+                                <th>电话/微信号</th>
+                                <th>状态</th>
+                                <th>最新跟进</th>
+                                <th>销售</th>
+                                <th>操作</th>
+                            </tr>
+                            {volist name="list" id="vo"}
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td><a href="{:url('invite/admin/invite_edit',array('id'=>$vo['id']))}">{$vo.name}</a></td>
+                                <td>{:empty($vo['phone'])?$vo['wx_id']:'***'}{$vo.phone|substr=-4}</td>
+                                <td>
+                                    {switch name="vo.status"}
+                                    {case value="0"}<span class="label label-default">新增</span>{/case}
+                                    {case value="1"}<span class="label label-warning">未成交</span>{/case}
+                                    {case value="2"}<span class="label label-success">成交</span>{/case}
+                                    {case value="3"}<span class="label label-danger">战败</span>{/case}
+                                    {/switch}
+                                </td>
+                                <td>
+                                    {$vo['updatetime']|date='Y-m-d'}
+                                </td>
+                                <td>
+                                    {$vo['admin_name']}
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="pj-btn btn btn-default btn-xs" href="{:url('invite/admin/invite_edit',array('id'=>$vo['id']))}"><i
+                                                class="fa fa-edit"></i>&nbsp;编辑</a>
+                                        <a class="pj-btn btn btn-default btn-xs" onclick="return del('{$vo.id}',this)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                        <div class="col-sm-7" style="text-align: right;float:right;">
+                            {$list->render()|raw}
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+    </section>
+    </div>
+</div>
+<script>
+    function del(id,obj) {
+        var confirm = $("#confirm");
+        var callback = $("#callback");
+        confirm.find('.inf').html("确定删除该文章吗？");
+        confirm.modal('show');
+        confirm.find('#del_act').click(
+            function () {
+                confirm.modal('hide');
+                $.ajax({
+                    url: "{:url('article/article/deletearticle')}",
+                    data: { 'id': id},
+                    type: 'post',
+                    success: function (res) {
+                        callback.find('.inf').html(res.msg);
+                        callback.modal('show');
+                        if(!res.code){
+                            callback.on('hide.bs.modal', function (event) {
+                                $(obj).parent().parent().parent().remove()
+                            })
+                        }
+                    },
+                    dataType: 'json',
+                    error: function () {
+                        $('#submit').removeClass('disable')
+                        callback.find('.inf').html('系统错误');
+                        callback.modal('show');
+                    }
+                });
+            }
+        );
+        return false;
+    }
+</script>
+

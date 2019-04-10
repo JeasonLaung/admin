@@ -1,0 +1,87 @@
+<div class="wrapper">
+    <div class="content-wrapper">
+        <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <a class="btn btn-warning" href="{:url('article/position/addposition')}" style="margin:15px 0;">添加推荐位</a>
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">推荐位列表</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>推荐位名称</th>
+                                <th>排序</th>
+                                <th>推荐位状态</th>
+
+                                <th>操作</th>
+                            </tr>
+                            {volist name="list" id="vo"}
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.position_name}</td>
+                                <td>{$vo.position_sort}</td>
+                                <td>
+                                    {eq name="vo.position_status" value="1"}
+                                    <span class="label label-warning">禁用</span>
+                                    {else/}
+                                    <span class="label label-success">正常</span>
+                                    {/eq}
+                                </td>
+
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default btn-xs" href="{:url('article/position/editposition',array('id'=>$vo['id']))}"><i
+                                                class="fa fa-edit"></i>&nbsp;编辑</a>
+                                        <a class="btn btn-default btn-xs" onclick="return del('{$vo.id}',this)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+    </section>
+    </div>
+</div>
+<script>
+    function del(id,obj) {
+        var confirm = $("#confirm");
+        var callback = $("#callback");
+        confirm.find('.inf').html("确定删除该推荐位吗？");
+        confirm.modal('show');
+        confirm.find('#del_act').click(
+            function () {
+                confirm.modal('hide');
+                $.ajax({
+                    url: "{:url('article/position/deleteposition')}",
+                    data: { 'id': id},
+                    type: 'post',
+                    success: function (res) {
+                        callback.find('.inf').html(res.msg);
+                        callback.modal('show');
+                        if(!res.code){
+                            callback.on('hide.bs.modal', function (event) {
+                                $(obj).parent().parent().parent().remove()
+                            })
+                        }
+                    },
+                    dataType: 'json',
+                    error: function () {
+                        $('#submit').removeClass('disable')
+                        callback.find('.inf').html('系统错误');
+                        callback.modal('show');
+                    }
+                });
+            }
+        );
+        return false;
+    }
+</script>
+

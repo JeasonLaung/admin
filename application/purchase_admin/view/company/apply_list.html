@@ -1,0 +1,209 @@
+<div class="wrapper">
+    <div class="content-wrapper">
+
+<div class="modal fade bs-example-modal-lg text-center" id="imgModal"tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" >
+          <div class="modal-dialog modal-lg" style="display: inline-block; width: auto;">
+            <div class="modal-content">
+             <img  id="imgInModalID" src="" >
+            </div>
+          </div>
+        </div>
+        <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">申请列表</h3>
+                        <div class="box-tools">
+                            <form method="get" id="formFilter">
+                                
+                                <div class="input-group input-group-sm" style="width:360px;">
+                                    <select  name="status" class="form-control" onchange="formFilter.submit()" style="width: 100px">
+                                    <option value="" {$status == '' ? 'selected="selected"' : ''}>全部</option>
+                                    <option value="0" {$status === '0' ? 'selected="selected"' : ''}>未处理</option>
+                                    <option value="1" {$status == 1 ? 'selected="selected"' : ''}>通过</option>
+                                    <option value="-1" {$status == -1 ? 'selected="selected"' : ''}>驳回</option>
+                                </select>
+                                	<input type="text" name="key_word" style="width: 135px" class="form-control pull-right" placeholder="搜索文章标题" value="{$key_word|default=''}">
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                        <a class="btn btn-default btn-xs" href="{:url('purchase_admin/company/apply_list')}"><i class="fa fa-refresh"></i>&nbsp;清除搜索</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>公司名</th>
+                                <th>备注</th>
+                                <th>图片</th>
+                                <th>状态</th>
+                                <th>申请时间</th>
+                                <th>操作</th>
+                            </tr>
+                            {volist name="list" id="vo"}
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.name}</td>
+                                <td>{$vo.note}</td>
+                                <td>{$vo.licence_pic}</td>
+                                <td>
+                                    {if $vo.status==-1}
+                                    <span class="label label-warning">已驳回</span>
+                                    {elseif $vo.status==0/}
+                                    <span class="label label-default">未读</span>
+                                    {elseif $vo.status==1/}
+                                    <span class="label label-success">已通过</span>
+                                    {/if}
+                                </td>
+                                
+                                <td style="max-width: 200px;overflow: hidden;">{$vo.create_time | date='Y-m-d H:i'}</td>
+
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-success btn-xs" onclick="resolve({$vo['id']},this,'{$vo['name']}')"><i
+                                                class="fa fa-check"></i>&nbsp;通过</a>
+                                        <a class="btn btn-warning btn-xs" onclick="reject('{$vo.id}',this,'{$vo['name']}')"><i class="fa fa-close"></i>&nbsp;驳回</a>
+                                        <a class="btn btn-danger btn-xs" onclick="del('{$vo.id}',this,'{$vo.name}')"><i class="fa fa-close"></i>&nbsp;删除</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                        <div class="col-sm-7" style="text-align: right;float:right;">
+                            {$list->render()|raw}
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+<script>
+    function del(id,obj,name) {
+        var confirm = $("#confirm");
+        var callback = $("#callback");
+        confirm.find('.inf').html(`是否删除<b>${name}</b>审核？`);
+        confirm.find('.modal-title').text('')
+        confirm.modal('show');
+        confirm.find('#del_act').click(
+            function () {
+                var reject_note = $('#rejectNote').val();
+                confirm.modal('hide');
+                $.ajax({
+                    url: "{:url('purchase_admin/company/delete_apply')}",
+                    data: {
+                        apply_id: id
+                    },
+                    type: 'post',
+                    success: function (res) {
+                        callback.find('.inf').html(res.msg);
+                        callback.modal('show');
+                        if(res.status){
+                            callback.on('hide.bs.modal', function (event) {
+                                window.location = window.location
+                            })
+                        }
+                    },
+                    dataType: 'json',
+                    error: function () {
+                        $('#submit').removeClass('disable')
+                        callback.find('.inf').html('系统错误');
+                        callback.modal('show');
+                    }
+                });
+            }
+        );
+        return false;
+    }
+    function resolve(id,obj,name) {
+        var confirm = $("#confirm");
+        var callback = $("#callback");
+        confirm.find('.inf').html(`是否通过<b>${name}</b>审核？`);
+        confirm.find('.modal-title').text('通过')
+        confirm.modal('show');
+        confirm.find('#del_act').click(
+            function () {
+                var reject_note = $('#rejectNote').val();
+                confirm.modal('hide');
+                $.ajax({
+                    url: "{:url('purchase_admin/company/resolve_apply')}",
+                    data: {
+                        apply_id: id,
+                        reject_note:reject_note
+                    },
+                    type: 'post',
+                    success: function (res) {
+                        callback.find('.inf').html(res.msg);
+                        callback.modal('show');
+                        if(res.status){
+                            callback.on('hide.bs.modal', function (event) {
+                                window.location = window.location
+                            })
+                        }
+                    },
+                    dataType: 'json',
+                    error: function () {
+                        $('#submit').removeClass('disable')
+                        callback.find('.inf').html('系统错误');
+                        callback.modal('show');
+                    }
+                });
+            }
+        );
+        return false;
+    }
+    function reject(id,obj,name) {
+        var confirm = $("#confirm");
+        var callback = $("#callback");
+        confirm.find('.inf').html(`
+            <h4>驳回${name}的申请</h4>
+            <div class="form-group">
+                <label>驳回建议</label>
+                <textarea type="text" id="rejectNote" class="form-control" placeholder="请输入驳回建议" value=""></textarea>
+            </div>
+            `);
+        confirm.find('.modal-title').text('驳回')
+        confirm.modal('show');
+        confirm.find('#del_act').click(
+            function () {
+                var reject_note = $('#rejectNote').val();
+                confirm.modal('hide');
+                $.ajax({
+                    url: "{:url('purchase_admin/company/reject_apply')}",
+                    data: {
+                        apply_id: id,
+                        reject_note:reject_note
+                    },
+                    type: 'post',
+                    success: function (res) {
+                        callback.find('.inf').html(res.msg);
+                        callback.modal('show');
+                        if(res.status){
+                            callback.on('hide.bs.modal', function (event) {
+                                window.location = window.location
+                            })
+                        }
+                    },
+                    dataType: 'json',
+                    error: function () {
+                        $('#submit').removeClass('disable')
+                        callback.find('.inf').html('系统错误');
+                        callback.modal('show');
+                    }
+                });
+            }
+        );
+        return false;
+    }
+</script>
+

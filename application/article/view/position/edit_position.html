@@ -1,0 +1,96 @@
+<div class="wrapper">
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">编辑推荐位</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form id="form">
+                            <input type="hidden" name="id" value="{$info.id}">
+                            <div class="box-body">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>推荐位名称</label>
+                                        <input type="text" name="position_name" class="form-control" placeholder="推荐位的名称标识"
+                                               value="{$info.position_name}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>排序</label>
+                                        <input type="text" name="position_sort" class="form-control" placeholder="排序" value="{$info.position_sort}">
+                                        <span style="color:#ff0000;font-size:12px;">(正整数,越大越靠前)</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="display:block;">启用状态</label>
+                                        <label>
+                                            <input type="radio" name="position_status" class="minimal" value="0" <?php if($info['position_status'] == 0){ echo 'checked'; } ?>>
+                                            启用
+                                        </label>
+                                        &nbsp;&nbsp;
+                                        <label>
+                                            <input type="radio" name="position_status" class="minimal" value="1" <?php if($info['position_status'] == 1){ echo 'checked'; } ?>>
+                                            禁用
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button type="button" id="submit" onclick="submit_data()" class="btn btn-primary">提交保存</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script>
+    $("body").keydown(function() {
+        if (event.keyCode == "13") {
+            //keyCode=13是回车键；数字不同代表监听的按键不同
+            submit_data();
+        }
+    });
+
+    var callback = $("#callback");
+    function submit_data() {
+        if($('#submit').hasClass('disable')){
+            return false
+        }
+        $('#submit').addClass('disable')
+        var url = "{:url('article/position/editposition')}";
+        var form = document.getElementById('form')
+        var data = new FormData(form)
+        $.ajax({
+            url: url,
+            data: data,
+            type: 'post',
+            success: function (res) {
+                callback.find('.inf').html(res.msg);
+                callback.modal('show');
+                callback.on('hide.bs.modal', function (event) {
+                    $('#submit').removeClass('disable')
+                    if (!res.code) {
+                        window.location.href = "{:url('article/position/index')}";
+                    }
+                })
+
+            },
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            error: function () {
+                $('#submit').removeClass('disable')
+                callback.find('.inf').html('系统错误');
+                callback.modal('show');
+            }
+        })
+    }
+</script>

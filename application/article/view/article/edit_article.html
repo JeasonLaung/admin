@@ -1,0 +1,173 @@
+<link rel="stylesheet" href="/static/plugins/iCheck/square/blue.css">
+<div class="wrapper">
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">发布文章</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form id="form">
+                            <input type="hidden" name="id" value="{$info.id}">
+                            <div class="box-body">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label style="display:block;">所属栏目</label>
+                                        <select name="pid" class="form-control select2" style="width:50%;">
+                                            {$option|raw}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>文章标题</label>
+                                        <input type="text" name="article_title" class="form-control" placeholder="文章标题" value="{$info.article_title}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>文章副标题</label>
+                                        <input type="text" name="article_subtitle" class="form-control" placeholder="文章副标题" value="{$info.article_subtitle}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>推荐位</label>
+                                        <div>
+                                            {volist name="position" id="vo"}
+                                            <label>
+                                                <input type="checkbox" name="position[]" value="{$vo.id}" <?php if(in_array($vo['id'],$access)){ echo 'checked'; }?>> <span style="position: relative;top: 2px;">{$vo.position_name}</span>&nbsp;&nbsp;
+                                            </label>
+                                            {/volist}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>文章封面图</label>
+                                        <div>
+                                            <img src="{$info.article_icon|default='/static/images/default-head.png'}" class="select_img" onclick="uploadImage(this)" ondragstart="return false">
+                                            <input type="hidden" name="article_icon" class="form-control" value="{$info.article_icon}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>文章二级封面图</label>
+                                        <div>
+                                            <img src="{$info.article_backimg|default='/static/images/default-head.png'}" class="select_img" onclick="uploadImage(this)" ondragstart="return false">
+                                            <input type="hidden" name="article_backimg" class="form-control" value="{$info.article_backimg}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>文章内容</label>
+                                        <div>
+                                            <textarea id="editor_id" name="article_content" class="form-control" style="height: 350px;min-width: 670px">{$info.article_content}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>文章描述</label>
+                                        <div>
+                                            <textarea name="article_describe" class="form-control">{$info.article_describe}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>排序</label>
+                                        <input type="text" name="article_sort" class="form-control" placeholder="排序" value="{$info.article_sort|default='0'}">
+                                        <span style="color:#ff0000;font-size:12px;">(正整数,越大越靠前)</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="display:block;">是否置顶</label>
+                                        <label>
+                                            <input type="radio" name="istop" class="minimal" value="0"  <?php if($info['istop'] == 0){ echo 'checked'; } ?>>
+                                            否
+                                        </label>
+                                        &nbsp;&nbsp;
+                                        <label>
+                                            <input type="radio" name="istop" class="minimal" value="1"  <?php if($info['istop'] == 1){ echo 'checked'; } ?>>
+                                            是
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="display:block;">显示状态</label>
+                                        <label>
+                                            <input type="radio" name="article_status" class="minimal" value="0" <?php if(empty($info['article_status'])){ echo 'checked'; } ?>>
+                                            显示
+                                        </label>
+                                        &nbsp;&nbsp;
+                                        <label>
+                                            <input type="radio" name="article_status" class="minimal" value="1" <?php if(!empty($info['article_status']) && $info['article_status'] == 1){ echo 'checked'; } ?>>
+                                            隐藏
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button type="button" id="submit" onclick="submit_data()" class="btn btn-primary">提交保存</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{include file="common@public/upload"}
+<script src="/static/plugins/iCheck/icheck.min.js"></script>
+<script charset="utf-8" src="/static/plugins/kindeditor/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="/static/plugins/kindeditor/lang/zh-CN.js"></script>
+<script>
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id', {
+            uploadJson : "{:url('article/article/uploadImg')}",
+//            fileManagerJson : '../jsp/file_manager_json.jsp',
+            allowFileManager : true
+        });
+    });
+    $(function () {
+        $('input[type=checkbox]').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' /* optional */
+        });
+        $("body").keydown(function() {
+            if (event.keyCode == "13") {
+                //keyCode=13是回车键；数字不同代表监听的按键不同
+                submit_data();
+            }
+        });
+    });
+
+    var callback = $("#callback");
+    function submit_data() {
+        if($('#submit').hasClass('disable')){
+            return false
+        }
+        $('#submit').addClass('disable')
+        var url = "{:url('article/article/editarticle')}";
+        editor.sync();
+        var form = document.getElementById('form')
+        var data = new FormData(form)
+        $.ajax({
+            url: url,
+            data: data,
+            type: 'post',
+            success: function (res) {
+                callback.find('.inf').html(res.msg);
+                callback.modal('show');
+                callback.on('hide.bs.modal', function (event) {
+                    $('#submit').removeClass('disable')
+                    if (!res.code) {
+                        window.location.href = "{:url('article/article/index')}";
+                    }
+                })
+
+            },
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            error: function () {
+                $('#submit').removeClass('disable')
+                callback.find('.inf').html('系统错误');
+                callback.modal('show');
+            }
+        })
+    }
+</script>

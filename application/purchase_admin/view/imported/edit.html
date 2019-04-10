@@ -1,0 +1,109 @@
+
+ <div class="content-wrapper">
+	<!-- Main content -->
+	<section class="content" style="margin-top:30px;">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- general form elements -->
+				<div class="box box-primary">
+					<div class="box-header with-border">
+						<h3 class="box-title">编辑平行进口</h3>
+					</div>
+					<!-- /.box-header -->
+					<!-- form start -->
+					<form id="form" role="form">
+						<div class="box-body">
+							<div class="col-md-8">
+								<div class="form-group">
+                                    <label>车价</label>
+                                    <div class='input-group'>
+	                                    <input type="text" name="car_price" class="form-control" placeholder="期待车价" value="{$info.car_price}">
+	                                    <span class="input-group-addon">万元</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label>品牌</label>
+                                    <select name="brand_id" id="" class="form-control">
+                                    	{foreach $brands as $brand}
+                                    		<option value="{$brand.id}" {if $brand.id == $info.brand_id}selected{/if}>{$brand.name}</option>
+                                    	{/foreach}
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>型号</label>
+                                    <input type="text" class="form-control" placeholder="型号" value="{$info.car_name}" name="car_name">
+                                </div>
+                                <div class="form-group">
+                                    <label>地区</label>
+                                    <div class="input-group">
+                                    	<span class="input-group-addon">省份</span>
+                                    	<input type="text" name="province" class="form-control" placeholder="省份" value="{$info.province}">
+                                    	<span class="input-group-addon">城市</span>
+	                                    <input type="text" name="city" class="form-control" placeholder="城市" value="{$info.city}">
+                                    	<span class="input-group-addon">县区</span>
+	                                    <input type="text" name="region" class="form-control" placeholder="县区" value="{$info.region}">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>备注</label>
+                                    <textarea type="text" name="note" class="form-control" placeholder="备注">{$info.note}</textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label style="margin-right: 20px;"><input name="status" type="radio" value="0" {if $info.status == 0}checked{/if}/>隐藏 </label> 
+                                    <label><input name="status" type="radio" value="1" {if $info.status == 1}checked{/if}/>显示 </label>  
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label>车源照片</label>
+                                    {include file="common@public/uploadFile" }
+                                </div>
+                                <input type="hidden" name="is_display" value="0">
+							</div>
+						</div>
+						<!-- /.box-body -->
+
+						<div class="box-footer">
+							<input type="hidden" name="id" value="{$info.id}">
+							<button type="button" id="submit" onclick="submit_data()" class="btn btn-primary">提交保存</button>
+                            <button type="button" class="btn btn-default" onclick="history.back(-1)">取消</button>
+							
+						</div>
+					</form>
+				</div>
+				<!-- /.box -->
+			</div>
+		</div>
+	</section>
+</div>
+<script>
+	function submit_data() {
+		var data = new FormData($('form')[0]);
+        data.append('photos',window.FILE_RESPONSE)
+		$.ajax({
+			url:'{:url("purchase_admin/imported/update")}',
+			method:'post',
+			data:data,
+			success:function (res) {
+				callback.find('.inf').html(res.msg);
+                callback.modal('show');
+                callback.on('hide.bs.modal', function (event) {
+                    $('#submit').removeClass('disable')
+                    if (res.status) {
+						window.location.href = "{:url('purchase_admin/imported/index')}";
+                    }
+                })
+			},
+			processData: false,
+            contentType: false,
+            dataType: 'json',
+            error: function () {
+                $('#submit').removeClass('disable')
+                callback.find('.inf').html('系统错误');
+                callback.modal('show');
+            }
+		})
+	}
+</script>

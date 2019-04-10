@@ -1,0 +1,128 @@
+<div class="wrapper">
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">编辑用户</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form id="form">
+                            <input type="hidden" value="{$info.id}" name="id">
+                            <div class="box-body">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>用户名称</label>
+                                        <input type="text" name="admin_name" class="form-control" placeholder="用户的名称标识" value="{$info.admin_name}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>用户登录账号</label>
+                                        <input type="text" name="admin_account" class="form-control" placeholder="用户登录账号" value="{$info.admin_account}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>用户登录密码(不修改不填写)</label>
+                                        <input type="password" name="password" class="form-control" placeholder="用户登录密码">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>确认登录密码(不修改不填写)</label>
+                                        <input type="password" name="password1" class="form-control" placeholder="确认登录密码">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>用户组</label>
+                                        <div class="form-group" style="padding: 0 10px">
+                                        <?php $rule = explode(',',$info['group_id']); ?>
+                                        {volist name="list" id="vo"}
+                                            <div class="btn-group" style="margin:3px;">
+                                                <button type="button" class="btn rule_sel<?php if(in_array($vo['id'], $rule)){ echo ' btn-primary'; }else{ echo ' btn-default'; } ?>">
+                                                    {$vo.title}
+                                                    <input type="checkbox" name="rules[]" value="{$vo.id}" class="hide_check" <?php if(in_array($vo['id'], $rule)){ echo 'checked'; } ?>>
+                                                </button>
+                                            </div>
+                                        {/volist}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="display:block;">启用状态</label>
+                                        <label>
+                                            <input type="radio" name="admin_status" class="minimal" value="0" checked>
+                                            启用
+                                        </label>
+                                        &nbsp;&nbsp;
+                                        <label>
+                                            <input type="radio" name="admin_status" class="minimal" value="1">
+                                            禁用
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button type="button" id="submit" onclick="submit_data()" class="btn btn-primary">提交保存</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script>
+    $("body").keydown(function() {
+        if (event.keyCode == "13") {
+            //keyCode=13是回车键；数字不同代表监听的按键不同
+            submit_data();
+        }
+    });
+
+    var callback = $("#callback");
+    function submit_data() {
+        if($('#submit').hasClass('disable')){
+            return false
+        }
+        $('#submit').addClass('disable')
+        var url = "{:url('admin/user/edituser')}";
+        var form = document.getElementById('form')
+        var data = new FormData(form)
+        $.ajax({
+            url: url,
+            data: data,
+            type: 'post',
+            success: function (res) {
+                callback.find('.inf').html(res.msg);
+                callback.modal('show');
+                callback.on('hide.bs.modal', function (event) {
+                    $('#submit').removeClass('disable')
+                    if (!res.code) {
+                        window.location.href = "{:url('admin/user/index')}";
+                    }
+                })
+
+            },
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            error: function () {
+                $('#submit').removeClass('disable')
+                callback.find('.inf').html('系统错误');
+                callback.modal('show');
+            }
+        })
+    }
+
+    $('.rule_sel').on('click',function(){
+        if($(this).hasClass('btn-default')){
+            $(this).removeClass('btn-default');
+            $(this).find('.hide_check').prop('checked',true);
+            $(this).addClass('btn-primary');
+        }else{
+            $(this).removeClass('btn-primary');
+            $(this).find('.hide_check').prop('checked',false);
+            $(this).addClass('btn-default');
+        }
+    });
+</script>

@@ -1,0 +1,95 @@
+<div class="wrapper">
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">添加报价</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form id="form">
+                            <div class="box-body">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>需求id</label>
+                                        <input type="text" name="ask_id" class="form-control" placeholder="用户id">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>车价</label>
+                                        <input type="text" name="car_price" class="form-control" placeholder="车价">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>备注</label>
+                                        <input type="text" name="note" class="form-control" placeholder="备注">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>用户id</label>
+                                        <input type="text" name="rule" class="form-control" disabled="" placeholder="用户id">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button type="button" id="submit" onclick="submit_data()" class="btn btn-primary">提交保存</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script>
+    $("body").keydown(function() {
+        if (event.keyCode == "13") {
+            //keyCode=13是回车键；数字不同代表监听的按键不同
+            submit_data();
+        }
+    });
+
+    var callback = $("#callback");
+    function submit_data() {
+        if($('#submit').hasClass('disable')){
+            return false
+        }
+        $('#submit').addClass('disable')
+        var url = "{:url('purchase_admin/quote/save')}";
+        var form = document.getElementById('form')
+        var data = new FormData(form)
+        $.ajax({
+            url: url,
+            data: data,
+            type: 'post',
+            success: function (res) {
+                callback.find('.inf').html(res.msg);
+                callback.modal('show');
+                callback.on('hide.bs.modal', function (event) {
+                    $('#submit').removeClass('disable')
+                    if (res.status) {
+                        window.location.href = "{:url('purchase_admin/quote/index')}";
+                    }
+                })
+
+            },
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            error: function () {
+                $('#submit').removeClass('disable')
+                callback.find('.inf').html('系统错误');
+                callback.modal('show');
+            }
+        })
+    }
+</script>

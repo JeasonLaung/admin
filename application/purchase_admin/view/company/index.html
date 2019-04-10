@@ -1,0 +1,121 @@
+<div class="wrapper">
+    <div class="content-wrapper">
+
+        <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">公司管理</h3>
+                        <div class="box-tools">
+                            <form method="get">
+                                <div class="input-group input-group-sm" style="width:330px;">
+                                	<input type="text" name="key_word" style="width: 135px" class="form-control pull-right" placeholder="搜索文章标题" value="{$key_word|default=''}">
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                        <a class="btn btn-default btn-xs" href="{:url('purchase_admin/company/index')}"><i class="fa fa-refresh"></i>&nbsp;清除搜索</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>公司</th>
+                                <th>管理员</th>
+                                <th>公司简介</th>
+                                <th>邀请码</th>
+                                <th>角色</th>
+                                <th>状态</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                            {volist name="list" id="vo"}
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.company_name}</td>
+                                <td>{$vo.name}</td>
+                                <td title='{$vo.company_info}'>{$vo.company_info}</td>
+                                <td>{$vo.invite_code}</td>
+                                <th>
+                                    {if $vo.group_id == 11}
+                                    <span class="label label-warning">分销商</span>
+                                    {elseif  $vo.group_id == 12/}
+                                    <span class="label label-success">供应商</span>
+                                    {else/}
+                                    <span class="label label-default">未设置</span>
+
+                                    {/if}
+                                </th>
+                                <td>
+                                    {eq name="vo.status" value="0"}
+                                    <span class="label label-warning">隐藏</span>
+                                    {else/}
+                                    <span class="label label-success">显示</span>
+                                    {/eq}
+                                </td>
+                                
+                                <td style="max-width: 200px;overflow: hidden;">{$vo.create_time | date='Y-m-d H:i'}</td>
+
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default btn-xs" href="{:url('purchase_admin/company/edit',array('id'=>$vo['id']))}"><i
+                                                class="fa fa-edit"></i>&nbsp;编辑</a>
+                                        <a class="btn btn-default btn-xs" onclick="return del('{$vo.id}',this)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                        <div class="col-sm-7" style="text-align: right;float:right;">
+                            {$list->render()|raw}
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+<script>
+    function del(id,obj) {
+        var confirm = $("#confirm");
+        var callback = $("#callback");
+        confirm.find('.inf').html("确定删除该需求吗？");
+        confirm.modal('show');
+        confirm.find('#del_act').click(
+            function () {
+                confirm.modal('hide');
+                $.ajax({
+                    url: "{:url('purchase_admin/company/delete')}",
+                    data: { 'id': id},
+                    type: 'post',
+                    success: function (res) {
+                        callback.find('.inf').html(res.msg);
+                        callback.modal('show');
+                        if(res.status){
+                            callback.on('hide.bs.modal', function (event) {
+                                $(obj).parent().parent().parent().remove()
+                            })
+                        }
+                    },
+                    dataType: 'json',
+                    error: function () {
+                        $('#submit').removeClass('disable')
+                        callback.find('.inf').html('系统错误');
+                        callback.modal('show');
+                    }
+                });
+            }
+        );
+        return false;
+    }
+</script>
+

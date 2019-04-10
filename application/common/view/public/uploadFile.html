@@ -1,0 +1,185 @@
+<style>
+	.add-file{
+		font-size: 50px;
+		color: #fff;
+		height: 100px;
+		width: 100px;
+		border: 1px solid #ccc;
+		/*line-height: 100px;*/
+		/*text-align: center;*/
+		background-color: #dadada;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		float: left;
+		margin-right: 5px;
+		margin-bottom: 5px;
+	}
+	.live-file{
+				font-size: 50px;
+		color: #fff;
+		height: 100px;
+		width: 100px;
+		border: 1px solid #ccc;
+		/*line-height: 100px;*/
+		/*text-align: center;*/
+		background-color: #dadada;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		float: left;
+		margin-right: 5px;
+		margin-bottom: 5px;
+	}
+	.photo-file{
+		background-color: #fff;
+	}
+	.add-file img{
+		max-height: 100px;
+		max-width: 100px;
+	}
+	.upload-component{
+		width: 100%;
+	}
+	/*.clear-fix:after{
+		display: table;
+		content: "";
+		clear: both;
+	}*/
+	.loading{
+		background-color: rgba(100,100,100,.5);
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		color:#fff;
+		font-size: 16px;
+		text-align: center;
+	}
+	.delete-file{
+		background-color: rgba(100,100,100,.5);
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		color:#fff;
+		font-size: 16px;
+		text-align: center;
+		z-index: 99;
+		display: none;
+	}
+	.add-file:hover .delete-file{
+		display: block;
+	}
+	.photo-controll{
+		position: relative;
+	}
+</style>
+<div class="upload-component">
+	<!-- 已存在相片 -->
+	{if !empty($photos)}
+			{foreach $photos as $photo}
+			<div class="add-file photo-file photo-controll">
+				<img src="{$photo}" onclick="delFile(this,'{$photo}')"/>
+				<div class="delete-file" onclick="delFile(this,'{$photo}')">点击删除</div>
+			</div>
+			{/foreach}
+	{/if}
+
+	<!-- 已选择的图片 -->
+	<div id="upload-pack" class="clear-fix">		
+	</div>
+
+	<!-- 添加新图片 -->
+	<label for="file-pack" style="width: 100px;">
+		<div class="add-file">
+			+
+		</div>
+		<input id="file-pack" type="file" style="visibility: hidden;" multiple="multiple"/>
+	</label>
+</div>
+<script>
+	{if !empty($photos)}
+		window.FILE_RESPONSE = [
+			{foreach $photos as $photo}
+				'{$photo}',
+			{/foreach}
+		];
+		{else/}
+		window.FILE_RESPONSE = [];
+	{/if}
+
+</script>
+<script>
+	function delFile(obj,path) {
+		$(obj).parent().remove()
+		// $.ajax({
+		// 	url:'/api/upload/delete',
+		// 	type: 'post',
+		// 	data: {
+		// 		name: path
+		// 	}
+		// });
+		var pos = window.FILE_RESPONSE.indexOf(path)
+		if(pos != -1){
+			//存在path
+			window.FILE_RESPONSE.splice(pos,1)
+		}
+	}
+		
+
+	var idNum = 0;
+	$('#file-pack').on('change',function (e) {
+		if (window.FILE_RESPONSE.length > 9) {
+			return;
+		}
+		var files = e.currentTarget.files
+		console.log(files)
+		for (var i = 0; i < files.length; i++) {
+			var reader = new FileReader();
+			reader.readAsDataURL(files[i]);
+			tmp(idNum);
+			function tmp(idNum) {
+				reader.onload = function (e) {
+					var html = ''
+					html += `<div class="add-file photo-file photo-controll"  id="upload${idNum}">`
+					html += 	 `<img src="${this.result}" alt="" >`
+					html += '<div class="loading">上传中...</div>'
+					html += '</div>'
+					$("#upload-pack").append(html);
+	            };
+			}
+			
+            var fd = new FormData()
+            console.log(fd)
+			fd.append('file',files[i])
+			// fd.append('_name',`upload${idNum}`)
+			// console.log(fd.get('file'))
+			;(function(a){
+				$.ajax({
+					url:'/api/upload/upload',
+					data:fd,
+					type:"POST",
+					processData: false,
+		            contentType: false,
+		            success:function (e) {
+		            	if (e.path) {
+		            	// 	// 成功
+		            	console.log(`#upload${a}`)
+		            		$(`#upload${a}`).find('.loading').remove()
+		            		$(`#upload${a}`).append(`<div class="delete-file" onclick="delFile(this,'upload${a}')">点击删除<div>`)
+		            		window.FILE_RESPONSE.push(e.path)
+		            	}
+		            }
+				})
+			})(idNum)
+
+			idNum++;
+
+
+		}
+
+
+	})
+
+</script>
+
+

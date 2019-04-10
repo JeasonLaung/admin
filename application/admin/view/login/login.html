@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>葡萄后台管理登录</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+</head>
+{include file="common@public/css" /}
+<!-- iCheck -->
+<link rel="stylesheet" href="/static/plugins/iCheck/square/blue.css">
+<body class="hold-transition login-page">
+{__NOLAYOUT__}
+<div class="login-box">
+    {include file="common@public/message" /}
+    <div class="login-logo" style="padding-top: 50px;">
+        <b>Putao</b>Admin
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg">登录葡萄后台管理系统</p>
+
+        <form id="login_form">
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="登录账号" name="username">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="登录密码" name="password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck" style="margin-top: 4px">
+                        <label>
+                            <input type="checkbox" name="save"> <span style="position: relative;top: 2px;">记住登录</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="button" class="btn btn-primary btn-block btn-flat" onclick="user_login()" id="login">登录</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+    </div>
+    <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+{include file="common@public/script" /}
+<!-- iCheck -->
+<script src="/static/plugins/iCheck/icheck.min.js"></script>
+<script>
+    $(function () {
+        $('input[type=checkbox]').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' /* optional */
+        });
+    });
+    $("body").keydown(function() {
+        if (event.keyCode == "13") {
+            //keyCode=13是回车键；数字不同代表监听的按键不同
+            user_login();
+        }
+    });
+
+    var callback = $("#callback");
+    function user_login() {
+        if($('#login').hasClass('disable')){
+            return false
+        }
+        $('#login').addClass('disable')
+        var url = "{:url('admin/login/login')}";
+        var form = document.getElementById('login_form')
+        var data = new FormData(form)
+        $.ajax({
+            url: url,
+            data: data,
+            type: 'post',
+            success: function (res) {
+                callback.find('.inf').html(res.msg);
+                callback.modal('show');
+                callback.on('hide.bs.modal', function (event) {
+                    $('#login').removeClass('disable')
+                    if (!res.code) {
+                        window.location.href = "{:url('admin/index/index')}";
+
+                    }
+                })
+
+            },
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            error: function () {
+                $('#login').removeClass('disable')
+                callback.find('.inf').html('系统错误');
+                callback.modal('show');
+            }
+        })
+    }
+</script>
+</body>
+</html>

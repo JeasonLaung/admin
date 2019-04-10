@@ -1,0 +1,103 @@
+<div class="wrapper">
+    <div class="content-wrapper">
+        <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <?php if($user_info['id'] == 1){ ?>
+                <a class="btn btn-warning" href="{:url('admin/user/addgroup')}" style="margin:15px 0;">添加用户组</a>
+                <?php } ?>
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">用户组列表</h3>
+                        <div class="box-tools">
+                            <form method="get">
+                                <div class="input-group input-group-sm" style="width:250px;">
+                                    <input type="text" name="search_key" class="form-control pull-right" placeholder="搜索用户组名称" value="{$search_key|default=''}">
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                        <a class="btn btn-default btn-xs" href="{:url('admin/user/group')}"><i class="fa fa-refresh"></i>&nbsp;清除搜索</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>ID</th>
+                                <th>用户组名称</th>
+                                <th>启用状态</th>
+                                <th>操作</th>
+                            </tr>
+                            {volist name="list" id="vo"}
+                            <tr>
+                                <td>{$vo.id}</td>
+                                <td>{$vo.title}</td>
+                                <td>
+                                    {eq name="vo.status" value="1"}
+                                    <span class="label label-warning">禁用</span>
+                                    {else/}
+                                    <span class="label label-success">启用</span>
+                                    {/eq}
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-default btn-xs" href="{:url('admin/user/editgroup',array('id'=>$vo['id']))}"><i
+                                                class="fa fa-edit"></i>&nbsp;编辑</a>
+                                        <a class="btn btn-default btn-xs" onclick="del('{$vo.id}',this)"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {/volist}
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                        <div class="col-sm-7" style="text-align: right;float:right;">
+                            {$list->render()|raw}
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+    </section>
+    </div>
+</div>
+<script>
+
+    function del(id,obj) {
+        var confirm = $("#confirm");
+        var callback = $("#callback");
+        confirm.find('.inf').html("确定删除该用户组吗？");
+        confirm.modal('show');
+        confirm.find('#del_act').click(
+            function () {
+                confirm.modal('hide');
+                $.ajax({
+                    url: "{:url('admin/user/deletegroup')}",
+                    data: { 'id': id},
+                    type: 'post',
+                    success: function (res) {
+                        callback.find('.inf').html(res.msg);
+                        callback.modal('show');
+                        if(!res.code){
+                            callback.on('hide.bs.modal', function (event) {
+                                $(obj).parent().parent().parent().remove()
+                            })
+                        }
+                    },
+                    dataType: 'json',
+                    error: function () {
+                        $('#submit').removeClass('disable')
+                        callback.find('.inf').html('系统错误');
+                        callback.modal('show');
+                    }
+                });
+            }
+        );
+        return false;
+    }
+</script>
+

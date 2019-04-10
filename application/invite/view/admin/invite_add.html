@@ -1,0 +1,204 @@
+
+<style>
+    #pj-model-chose{
+        border: 1px dashed #ccc;
+        border-radius: 5px;
+        margin-top: 15px;
+        padding: 5px;
+    }
+    #pj-model-chose .item{
+        position: relative;
+        border:1px solid #999;
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 5px;
+        padding: 3px;
+        margin: 3px;
+    }
+    #pj-model-chose .item .cross{
+        cursor: pointer;
+        position: absolute;
+        right: -6px;
+        top: -6px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: red;
+        color:#fff;
+        line-height: 12px;
+        font-size: 10px;
+        text-align: center;
+    }
+</style>
+
+<div class="wrapper">
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">增加客户</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <form id="form">
+                            <div class="box-body">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>客户姓名 <span class="text-danger">*</span></label>
+                                        <input type="text" name="name" class="form-control" placeholder="客户姓名">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>客户手机/微信号 <span class="text-danger">*</span></label>
+                                        <div class="input-group" style="width: 100%;">
+                                            <div class="input-group-btn">
+                                                <select name="user_type" class="form-control" style="width:auto;" onchange="changeType(this)">
+                                                    <option value="0">手机</option>
+                                                    <option value="1">微信</option>
+                                                </select>
+                                            </div>
+                                            <!-- /btn-group -->
+                                            <input type="text" name="phone" class="form-control" placeholder="客户手机">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>来源渠道 <span class="text-danger">*</span></label>
+                                        <select class="form-control select2" name="channel" id="pj-channel-select" style="width: 100%;">
+                                            <option value="">选择来源渠道</option>
+                                            {foreach name="channelList" item="vo" key="k"}
+                                            <option value="{$vo.code}">{$vo.name}</option>
+                                            {/foreach}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>关注品牌/车型 <span class="text-danger">*</span></label>
+                                        <select class="form-control select2" id="pj-model-select" style="width: 100%;">
+                                            <option value="0">选择关注品牌</option>
+                                            {foreach name="brandList" item="vo" key="k"}
+                                            <option value="{$vo.id}">{$vo.p_name}{$vo.name}</option>
+                                            {/foreach}
+                                        </select>
+                                        <div id="pj-model-chose">
+                                        </div>
+                                    </div>
+                                    <script>
+                                    </script>
+                                    <div class="form-group">
+                                        <label style="display:block;">邀约方式</label>
+                                        <label>
+                                            <input type="radio" name="method" class="flat-red" value="1" checked>
+                                            到店拜访
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="method" class="flat-red" value="2">
+                                            外出拜访
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>附件图</label>
+                                        <div>
+                                            {include file="common@public/uploadFile" /}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>跟进记录</label>
+                                        <div>
+                                            <textarea name="follow" id="" rows="10" style="min-width:100%;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <button type="button" id="submit" onclick="submit_data()" class="btn btn-primary">提交保存</button>
+                                <button type="button" id="back" onclick="history.go(-1)" class="btn btn-warning">返回</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<link rel="stylesheet" href="/static/plugins/select2/select2.min.css">
+<script src="/static/plugins/select2/select2.full.js"></script>
+<script>
+    //Initialize Select2 Elements
+    $("#pj-channel-select").select2();
+    var model_select = $("#pj-model-select");
+    var model_chose = $("#pj-model-chose");
+    var model_select2 = model_select.select2();
+
+    model_select.change(function(e){
+        var val = $(this).val();
+        if(val == 0) return false;
+        var txt = $(this).find('option[value='+val+']').text();
+        model_chose.append('<div class="item" data-id="'+val+'">'+txt+'<div class="cross">×</div></div>');
+        $(this).find('option[value='+val+']').attr('disabled','disabled');
+        setTimeout(()=>{model_select2.select2();},1);
+    });
+    model_chose.on('click','.item .cross',function(e){
+        var id = $(this).parent().attr('data-id');
+        model_select.find('option[value='+id+']').removeAttr('disabled');
+        model_select2.select2();
+        model_select2.val("0").trigger("change");
+        $(this).parent().remove();
+    });
+
+    //客户手机/微信切换
+    function changeType(ele){
+        var val = $(ele).val();
+        if(val == 1){
+            $(ele).parent().next().attr('placeholder','客户微信');
+        }else{
+            $(ele).parent().next().attr('placeholder','客户手机');
+        }
+    }
+
+
+    var callback = $("#callback");
+    var submit = $('#submit');
+    function submit_data() {
+        if(submit.hasClass('disable')){
+            return false
+        }
+        submit.addClass('disable');
+        var form = document.getElementById('form');
+        var data = new FormData(form);
+        var files = window.FILE_RESPONSE;
+        var brands = [];
+        model_chose.find('.item').each(function(k,v){
+            brands.push($(v).attr('data-id'));
+        });
+        data.append('pics',files);
+        data.append('brands',brands);
+        $.ajax({
+            url: "{:url('invite_add')}",
+            data: data,
+            type: 'post',
+            success: function (res) {
+                callback.find('.inf').html(res.msg);
+                callback.modal('show');
+                callback.on('hide.bs.modal', function (event) {
+                    submit.removeClass('disable');
+                    if (!res.code) {
+                        self.location=document.referrer;
+                    }
+                })
+
+            },
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            error: function () {
+                submit.removeClass('disable');
+                callback.find('.inf').html('系统错误');
+                callback.modal('show');
+            }
+        })
+    }
+</script>

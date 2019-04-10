@@ -1,0 +1,3465 @@
+{
+	"info": {
+		"_postman_id": "dbf16081-3a7e-466c-a0d8-710a99c8db91",
+		"name": "tt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "品牌",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8000/purchase/brand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/brand",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"brand"
+							]
+						},
+						"description": "全部品牌"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/brand/",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/brand",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"brand"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 10:06:56 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 22,\n            \"letter\": \"A\",\n            \"name\": \"奥迪\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd9bae2820.png\"\n        },\n        {\n            \"id\": 2136,\n            \"letter\": \"A\",\n            \"name\": \"阿尔法・罗密欧\",\n            \"img\": \"/putao/Public/Uploads/5bce7f27e0f1b.png\"\n        },\n        {\n            \"id\": 1,\n            \"letter\": \"B\",\n            \"name\": \"奔驰\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd9d4b4303.png\"\n        },\n        {\n            \"id\": 11,\n            \"letter\": \"B\",\n            \"name\": \"宝马\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd9c3672b0.png\"\n        },\n        {\n            \"id\": 46,\n            \"letter\": \"B\",\n            \"name\": \"比亚迪\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd9821c712.png\"\n        },\n        {\n            \"id\": 93,\n            \"letter\": \"B\",\n            \"name\": \"别克\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd917df740.png\"\n        },\n        {\n            \"id\": 184,\n            \"letter\": \"B\",\n            \"name\": \"保时捷\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd72a6193f.png\"\n        },\n        {\n            \"id\": 274,\n            \"letter\": \"B\",\n            \"name\": \"宝骏\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c292e42ca6d.png\"\n        },\n        {\n            \"id\": 2025,\n            \"letter\": \"B\",\n            \"name\": \"北汽新能源\",\n            \"img\": \"/putao/Public/Uploads/59964f7ba2738.png\"\n        },\n        {\n            \"id\": 2113,\n            \"letter\": \"B\",\n            \"name\": \"宝沃\",\n            \"img\": \"/putao/Public/Uploads/5be91ba87194c.png\"\n        },\n        {\n            \"id\": 50,\n            \"letter\": \"C\",\n            \"name\": \"长安福特\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c27b7829322.png\"\n        },\n        {\n            \"id\": 76,\n            \"letter\": \"C\",\n            \"name\": \"长安\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd93849115.png\"\n        },\n        {\n            \"id\": 145,\n            \"letter\": \"C\",\n            \"name\": \"长安马自达\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c27b4f41477.png\"\n        },\n        {\n            \"id\": 69,\n            \"letter\": \"D\",\n            \"name\": \"一汽大众\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c670fd59aa3.png\"\n        },\n        {\n            \"id\": 83,\n            \"letter\": \"D\",\n            \"name\": \"东风日产\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd9282ff25.png\"\n        },\n        {\n            \"id\": 107,\n            \"letter\": \"D\",\n            \"name\": \"东风本田\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c292a74516e.png\"\n        },\n        {\n            \"id\": 192,\n            \"letter\": \"D\",\n            \"name\": \"东风悦达起亚\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c273258c09c.png\"\n        },\n        {\n            \"id\": 204,\n            \"letter\": \"D\",\n            \"name\": \"东风标致\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c2692b4b140.png\"\n        },\n        {\n            \"id\": 219,\n            \"letter\": \"D\",\n            \"name\": \"东风雪铁龙\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c26a67748b6.png\"\n        },\n        {\n            \"id\": 2018,\n            \"letter\": \"D\",\n            \"name\": \"DS\",\n            \"img\": \"/putao/Public/Uploads/5980154ec2ba8.png\"\n        },\n        {\n            \"id\": 2024,\n            \"letter\": \"F\",\n            \"name\": \"菲亚特\",\n            \"img\": \"/putao/Public/Uploads/598014f567880.png\"\n        },\n        {\n            \"id\": 102,\n            \"letter\": \"G\",\n            \"name\": \"广汽传祺\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd8df1af97.png\"\n        },\n        {\n            \"id\": 121,\n            \"letter\": \"G\",\n            \"name\": \"广汽本田\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c2930ea7601.png\"\n        },\n        {\n            \"id\": 1688,\n            \"letter\": \"G\",\n            \"name\": \"广汽丰田\",\n            \"img\": \"/putao/Public/Uploads/thumb_590d6cb24e6ad.png\"\n        },\n        {\n            \"id\": 2021,\n            \"letter\": \"G\",\n            \"name\": \"广汽三菱\",\n            \"img\": \"/putao/Public/Uploads/59801513a6756.png\"\n        },\n        {\n            \"id\": 137,\n            \"letter\": \"H\",\n            \"name\": \"哈弗\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd875d6ff0.png\"\n        },\n        {\n            \"id\": 250,\n            \"letter\": \"H\",\n            \"name\": \"幻速\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd61baf976.png\"\n        },\n        {\n            \"id\": 169,\n            \"letter\": \"J\",\n            \"name\": \"捷豹\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd75d98268.png\"\n        },\n        {\n            \"id\": 177,\n            \"letter\": \"J\",\n            \"name\": \"Jeep\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd7390688a.png\"\n        },\n        {\n            \"id\": 266,\n            \"letter\": \"J\",\n            \"name\": \"吉利\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c2726c74df0.png\"\n        },\n        {\n            \"id\": 2019,\n            \"letter\": \"K\",\n            \"name\": \"凯迪拉克\",\n            \"img\": \"/putao/Public/Uploads/59801543cb9b0.png\"\n        },\n        {\n            \"id\": 150,\n            \"letter\": \"L\",\n            \"name\": \"雷克萨斯\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c26bc8db705.png\"\n        },\n        {\n            \"id\": 163,\n            \"letter\": \"L\",\n            \"name\": \"路虎进口\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd7729b454.png\"\n        },\n        {\n            \"id\": 2023,\n            \"letter\": \"L\",\n            \"name\": \"雷诺\",\n            \"img\": \"/putao/Public/Uploads/59801522adc99.png\"\n        },\n        {\n            \"id\": 2109,\n            \"letter\": \"L\",\n            \"name\": \"铃木\",\n            \"img\": \"/putao/Public/Uploads/5be91bc5c08b2.jpg\"\n        },\n        {\n            \"id\": 2131,\n            \"letter\": \"L\",\n            \"name\": \"路虎\",\n            \"img\": \"/putao/Public/Uploads/5b6d43b7b7213.png\"\n        },\n        {\n            \"id\": 2020,\n            \"letter\": \"O\",\n            \"name\": \"讴歌\",\n            \"img\": \"/putao/Public/Uploads/59801536cc032.png\"\n        },\n        {\n            \"id\": 1727,\n            \"letter\": \"P\",\n            \"name\": \"平行进口\",\n            \"img\": \"\"\n        },\n        {\n            \"id\": 160,\n            \"letter\": \"Q\",\n            \"name\": \"奇瑞\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd827662f4.png\"\n        },\n        {\n            \"id\": 238,\n            \"letter\": \"Q\",\n            \"name\": \"启辰\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd63aab66f.png\"\n        },\n        {\n            \"id\": 2105,\n            \"letter\": \"R\",\n            \"name\": \"荣威\",\n            \"img\": \"/putao/Public/Uploads/5b03e12fd0cea.png\"\n        },\n        {\n            \"id\": 2049,\n            \"letter\": \"S\",\n            \"name\": \"上海大众\",\n            \"img\": \"/putao/Public/Uploads/59ccaa3b338ae.jpg\"\n        },\n        {\n            \"id\": 2107,\n            \"letter\": \"S\",\n            \"name\": \"斯柯达\",\n            \"img\": \"/putao/Public/Uploads/5b03e4109309e.png\"\n        },\n        {\n            \"id\": 2118,\n            \"letter\": \"S\",\n            \"name\": \"斯巴鲁\",\n            \"img\": \"/putao/Public/Uploads/5be91bcfd53f2.jpg\"\n        },\n        {\n            \"id\": 2128,\n            \"letter\": \"S\",\n            \"name\": \"上汽大众\",\n            \"img\": \"/putao/Public/Uploads/5b679eaee5bbb.png\"\n        },\n        {\n            \"id\": 210,\n            \"letter\": \"W\",\n            \"name\": \"沃尔沃\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd6cc0055e.png\"\n        },\n        {\n            \"id\": 267,\n            \"letter\": \"W\",\n            \"name\": \"五菱\",\n            \"img\": \"/putao/Public/Uploads/thumb_58c27bd6dd80c.png\"\n        },\n        {\n            \"id\": 36,\n            \"letter\": \"X\",\n            \"name\": \"现代\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd99405c03.png\"\n        },\n        {\n            \"id\": 129,\n            \"letter\": \"X\",\n            \"name\": \"雪佛兰\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd894a6ea9.png\"\n        },\n        {\n            \"id\": 29,\n            \"letter\": \"Y\",\n            \"name\": \"一汽丰田\",\n            \"img\": \"/putao/Public/Uploads/thumb_590d6ca5aa829.jpg\"\n        },\n        {\n            \"id\": 1704,\n            \"letter\": \"Y\",\n            \"name\": \"一汽马自达\",\n            \"img\": \"/putao/Public/Uploads/thumb_590d6c72c12e8.jpg\"\n        },\n        {\n            \"id\": 2048,\n            \"letter\": \"Y\",\n            \"name\": \"一汽大众\",\n            \"img\": \"/putao/Public/Uploads/59cca94e2c910.jpg\"\n        },\n        {\n            \"id\": 2145,\n            \"letter\": \"Y\",\n            \"name\": \"英菲尼迪\",\n            \"img\": \"/putao/Public/Uploads/5c42ee860f909.png\"\n        },\n        {\n            \"id\": 233,\n            \"letter\": \"Z\",\n            \"name\": \"知豆\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd654cd05e.png\"\n        },\n        {\n            \"id\": 2111,\n            \"letter\": \"Z\",\n            \"name\": \"众泰\",\n            \"img\": \"/putao/Public/Uploads/5be91bbc02f1a.png\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/brand/type/brand_id/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/brand/type/brand_id/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"brand",
+								"type",
+								"brand_id",
+								"1"
+							]
+						},
+						"description": "品牌下的车型"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/brand/type/brand_id/1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/brand/type/brand_id/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"brand",
+										"type",
+										"brand_id",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 10:09:14 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"letter\": \"N\",\n            \"name\": \"A级\"\n        },\n        {\n            \"id\": 466,\n            \"letter\": \"N\",\n            \"name\": \"A级（进口）\"\n        },\n        {\n            \"id\": 1681,\n            \"letter\": \"N\",\n            \"name\": \"B级\"\n        },\n        {\n            \"id\": 464,\n            \"letter\": \"N\",\n            \"name\": \"CLA\"\n        },\n        {\n            \"id\": 1682,\n            \"letter\": \"N\",\n            \"name\": \"CLS\"\n        },\n        {\n            \"id\": 452,\n            \"letter\": \"N\",\n            \"name\": \"C级\"\n        },\n        {\n            \"id\": 454,\n            \"letter\": \"N\",\n            \"name\": \"E级\"\n        },\n        {\n            \"id\": 3,\n            \"letter\": \"N\",\n            \"name\": \"GLA\"\n        },\n        {\n            \"id\": 463,\n            \"letter\": \"N\",\n            \"name\": \"GLA(进口)\"\n        },\n        {\n            \"id\": 9,\n            \"letter\": \"N\",\n            \"name\": \"GLC\"\n        },\n        {\n            \"id\": 462,\n            \"letter\": \"N\",\n            \"name\": \"GLC（进口）\"\n        },\n        {\n            \"id\": 8,\n            \"letter\": \"N\",\n            \"name\": \"GLE\"\n        },\n        {\n            \"id\": 394,\n            \"letter\": \"N\",\n            \"name\": \"GLS\"\n        },\n        {\n            \"id\": 1684,\n            \"letter\": \"N\",\n            \"name\": \"G级\"\n        },\n        {\n            \"id\": 7,\n            \"letter\": \"N\",\n            \"name\": \"R级\"\n        },\n        {\n            \"id\": 393,\n            \"letter\": \"N\",\n            \"name\": \"S\"\n        },\n        {\n            \"id\": 10,\n            \"letter\": \"N\",\n            \"name\": \"smart\"\n        },\n        {\n            \"id\": 1683,\n            \"letter\": \"N\",\n            \"name\": \"S级\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/brand/follow/brand_id/1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/brand/follow",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"brand",
+								"follow"
+							]
+						},
+						"description": "关注品牌"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/brand/follow/brand_id/1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "brand_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/brand/follow",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"brand",
+										"follow"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 10:36:41 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"id\": 47\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/brand/unfollow",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/brand/unfollow",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"brand",
+								"unfollow"
+							]
+						},
+						"description": "取消关注"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/brand/unfollow",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "brand_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/brand/unfollow",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"brand",
+										"unfollow"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 10:37:08 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"code\": 400,\n    \"msg\": \"取消关注成功\"\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/brand/get_follow",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/brand/get_follow",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"brand",
+								"get_follow"
+							]
+						},
+						"description": "获取关注列表"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/brand/get_follow",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "brand_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/brand/get_follow",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"brand",
+										"get_follow"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 10:38:23 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"letter\": \"B\",\n            \"name\": \"奔驰\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd9d4b4303.png\",\n            \"followed\": 1\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "用户",
+			"item": [
+				{
+					"name": "127.0.0.1:8000/purchase/login/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "033pt5ts1G9SOl0TC5ts1t3Lss1pt5td",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/purchase/login/login",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"login",
+								"login"
+							]
+						},
+						"description": "登录接口"
+					},
+					"response": [
+						{
+							"name": "127.0.0.1:8000/purchase/login/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "code",
+											"value": "033Jz52w05CNqb1uwI2w04Fp2w0Jz52W",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/purchase/login/login",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"login",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Mar 2019 21:29:43 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "X-Putao-Signature",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM2MDY5ODMsImV4cCI6MTU1MzY5MzM4MywidWlkIjoxNzA3M30.GuiOCfWAbEnfM7l6Ug9SwZhoZubijfkwqVplEqQa6tJqaB7nnjFqGktQ3ms0GMnGZuYooOLSOEnJcRJRDzOQLj_1ebzX0IwOt23EVZ-3itQ32sc--HR1R0dY2nUmiiMvmJYtRSIeBX0MmvrmGO10q49KFZoK3pGgxIDdGNll88w"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"status\":1}"
+						}
+					]
+				},
+				{
+					"name": "127.0.0.1:8000/purchase/login/captcha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "18680026210",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/purchase/login/captcha",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"login",
+								"captcha"
+							]
+						},
+						"description": "发送验证码"
+					},
+					"response": []
+				},
+				{
+					"name": "127.0.0.1:8000/purchase/login/info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/purchase/login/info",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"login",
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "127.0.0.1:8000/purchase/login/info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/purchase/login/info",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"login",
+										"info"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 10:30:08 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"phone\": \"18680026210\",\n        \"name\": \"\",\n        \"nickname\": null,\n        \"company_name\": null,\n        \"id\": 17074,\n        \"role\": 10\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "127.0.0.1:8000/purchase/login/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "18680026210",
+									"type": "text"
+								},
+								{
+									"key": "captcha",
+									"value": "8749",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "023nRVJQ0RQbn629gALQ0SJSJQ0nRVJN",
+									"type": "text"
+								},
+								{
+									"key": "nickname",
+									"value": "盛盛",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/purchase/login/register",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"login",
+								"register"
+							]
+						},
+						"description": "注册"
+					},
+					"response": [
+						{
+							"name": "127.0.0.1:8000/purchase/login/register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "phone",
+											"value": "18680026210",
+											"type": "text"
+										},
+										{
+											"key": "captcha",
+											"value": "8749",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "023nRVJQ0RQbn629gALQ0SJSJQ0nRVJN",
+											"type": "text"
+										},
+										{
+											"key": "nickname",
+											"value": "盛盛",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "127.0.0.1:8000/purchase/login/register",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"login",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 10:20:11 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "X-Putao-Signature",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\"status\":1}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "车源信息",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8000/purchase/market/index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/market/index?key_word=保时捷&page_num=1&page_size=5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"market",
+								"index"
+							],
+							"query": [
+								{
+									"key": "key_word",
+									"value": "保时捷"
+								},
+								{
+									"key": "page_num",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "5"
+								}
+							]
+						},
+						"description": "获取全部车源信息"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/market/index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/market/index?key_word=保时捷&page_num=1&page_size=5",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"market",
+										"index"
+									],
+									"query": [
+										{
+											"key": "key_word",
+											"value": "保时捷"
+										},
+										{
+											"key": "page_num",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 10:49:29 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 11,\n            \"user_id\": 88,\n            \"brand_id\": 184,\n            \"market\": \"11111\\n1222222\\n44444\\nssssss\",\n            \"create_time\": 1552555924,\n            \"update_time\": 1552556854,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"photos\": null,\n            \"brand_name\": \"保时捷\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd72a6193f.png\",\n            \"name\": null,\n            \"phone\": null,\n            \"liked\": 0\n        }\n    ]\n}"
+						},
+						{
+							"name": "http://127.0.0.1:8000/purchase/market/index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/market/index?key_word=保时捷&page_num=1&page_size=5",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"market",
+										"index"
+									],
+									"query": [
+										{
+											"key": "key_word",
+											"value": "保时捷"
+										},
+										{
+											"key": "page_num",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 11:01:54 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 11,\n            \"user_id\": 88,\n            \"brand_id\": 184,\n            \"market\": \"11111\\n1222222\\n44444\\nssssss\",\n            \"create_time\": 1552555924,\n            \"update_time\": 1552556854,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"photos\": null,\n            \"brand_name\": \"保时捷\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd72a6193f.png\",\n            \"name\": null,\n            \"phone\": null,\n            \"liked\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/market/read",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/market/read/?id=11",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"market",
+								"read",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11"
+								}
+							]
+						},
+						"description": "单个车源"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/market/read/id/11",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/market/read/?id=11",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"market",
+										"read",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "11"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 11:06:08 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"id\": 11,\n        \"user_id\": 88,\n        \"brand_id\": 184,\n        \"market\": \"11111\\n1222222\\n44444\\nssssss\",\n        \"create_time\": 1552555924,\n        \"update_time\": 1552556854,\n        \"status\": 1,\n        \"is_delete\": 0,\n        \"photos\": null,\n        \"brand_name\": \"保时捷\",\n        \"img\": \"/putao/Public/Uploads/thumb_58bfd72a6193f.png\",\n        \"name\": null,\n        \"phone\": null,\n        \"liked\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/market/save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "market",
+									"value": "C180L 3238 大标 白黑 下4.5万保\nC260L 3508 大标 白米  下4.8万店保\nC260L 3508 大标 宝蓝黑 下4.1万店保\nC260L 3508 大标 白黑 下3.7万裸 选双屏\nC260L 3508 小标 白黑 下4万裸\nC260 3688 白黑 下6万保\nC260 3688 白黑 白红 下4.5万裸\nC300L 4868 大标 白黑 下4万店保\n \nE200L4358 大标 白黑 下3.5万保 选全景\nE300L4758 大标 白棕 下3万裸\nGLA200 2888 白黑 宝蓝黑 下5.3万店保\nGLA220 3248 白黑 红黑 下6.3万店保\n \nGLC260L 4298 红棕 红黑下2.5万裸\nGLC260L 4298 白黑 下2万裸 选智乐\nGLC260L 445  红黑 下3万裸 \nGLC300L 4898 红棕 灰黑 下3.2万裸\nGLC300L 4898 白黑 红黑 下3.8万保\nGLC300L 576  白黑 下7.3万保\n \nGLS400 10758 黑棕 黑黑 下9.8万裸19款\nGLS400 12498 黑棕 黑黑 下9.8万裸19款\nS320L 8638 黑棕 下6.8万保\nS320L 8638 黑黑 红宝石黑棕 下7.5万保\nS350L 94.88 黑米 碳灰蓝棕 下2.5万裸\nS350L 10288黑棕 平价保\nS350L 10288 红宝石黑黑 下5千保\nS450L 12288 黑粽 下2万保 \nS500L 17328 黑棕 下10万保 国6\n卖全国另有迈巴赫",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/market/save",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"market",
+								"save"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/market/save",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "market",
+											"value": "C180L 3238 大标 白黑 下4.5万保\nC260L 3508 大标 白米  下4.8万店保\nC260L 3508 大标 宝蓝黑 下4.1万店保\nC260L 3508 大标 白黑 下3.7万裸 选双屏\nC260L 3508 小标 白黑 下4万裸\nC260 3688 白黑 下6万保\nC260 3688 白黑 白红 下4.5万裸\nC300L 4868 大标 白黑 下4万店保\n \nE200L4358 大标 白黑 下3.5万保 选全景\nE300L4758 大标 白棕 下3万裸\nGLA200 2888 白黑 宝蓝黑 下5.3万店保\nGLA220 3248 白黑 红黑 下6.3万店保\n \nGLC260L 4298 红棕 红黑下2.5万裸\nGLC260L 4298 白黑 下2万裸 选智乐\nGLC260L 445  红黑 下3万裸 \nGLC300L 4898 红棕 灰黑 下3.2万裸\nGLC300L 4898 白黑 红黑 下3.8万保\nGLC300L 576  白黑 下7.3万保\n \nGLS400 10758 黑棕 黑黑 下9.8万裸19款\nGLS400 12498 黑棕 黑黑 下9.8万裸19款\nS320L 8638 黑棕 下6.8万保\nS320L 8638 黑黑 红宝石黑棕 下7.5万保\nS350L 94.88 黑米 碳灰蓝棕 下2.5万裸\nS350L 10288黑棕 平价保\nS350L 10288 红宝石黑黑 下5千保\nS450L 12288 黑粽 下2万保 \nS500L 17328 黑棕 下10万保 国6\n卖全国另有迈巴赫",
+											"type": "text"
+										},
+										{
+											"key": "brand_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/market/save",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"market",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 11:52:44 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"发布成功\",\n    \"data\": \"18\"\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/market/update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "market",
+									"value": "C180L 3238 大标 白黑 下4.5万保\nC260L 3508 大标 白米  下4.8万店保\nC260L 3508 大标 宝蓝黑 下4.1万店保\nC260L 3508 大标 白黑 下3.7万裸 选双屏\nC260L 3508 小标 白黑 下4万裸\nC260 3688 白黑 下6万保\nC260 3688 白黑 白红 下4.5万裸\nC300L 4868 大标 白黑 下4万店保\n \nE200L4358 大标 白黑 下3.5万保 选全景\nE300L4758 大标 白棕 下3万裸\nGLA200 2888 白黑 宝蓝黑 下5.3万店保\nGLA220 3248 白黑 红黑 下6.3万店保\n \nGLC260L 4298 红棕 红黑下2.5万裸\nGLC260L 4298 白黑 下2万裸 选智乐\nGLC260L 445  红黑 下3万裸 \nGLC300L 4898 红棕 灰黑 下3.2万裸\nGLC300L 4898 白黑 红黑 下3.8万保\nGLC300L 576  白黑 下7.3万保\n \nGLS400 10758 黑棕 黑黑 下9.8万裸19款\nGLS400 12498 黑棕 黑黑 下9.8万裸19款\nS320L 8638 黑棕 下6.8万保\nS320L 8638 黑黑 红宝石黑棕 下7.5万保\nS350L 94.88 黑米 碳灰蓝棕 下2.5万裸\nS350L 10288黑棕 平价保\nS350L 10288 红宝石黑黑 下5千保\nS450L 12288 黑粽 下2万保 \nS500L 17328 黑棕 下10万保 国6\n卖全国另有迈巴赫",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "18",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/market/update",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"market",
+								"update"
+							]
+						},
+						"description": "编辑车源"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/market/update",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "market",
+											"value": "C180L 3238 大标 白黑 下4.5万保\nC260L 3508 大标 白米  下4.8万店保\nC260L 3508 大标 宝蓝黑 下4.1万店保\nC260L 3508 大标 白黑 下3.7万裸 选双屏\nC260L 3508 小标 白黑 下4万裸\nC260 3688 白黑 下6万保\nC260 3688 白黑 白红 下4.5万裸\nC300L 4868 大标 白黑 下4万店保\n \nE200L4358 大标 白黑 下3.5万保 选全景\nE300L4758 大标 白棕 下3万裸\nGLA200 2888 白黑 宝蓝黑 下5.3万店保\nGLA220 3248 白黑 红黑 下6.3万店保\n \nGLC260L 4298 红棕 红黑下2.5万裸\nGLC260L 4298 白黑 下2万裸 选智乐\nGLC260L 445  红黑 下3万裸 \nGLC300L 4898 红棕 灰黑 下3.2万裸\nGLC300L 4898 白黑 红黑 下3.8万保\nGLC300L 576  白黑 下7.3万保\n \nGLS400 10758 黑棕 黑黑 下9.8万裸19款\nGLS400 12498 黑棕 黑黑 下9.8万裸19款\nS320L 8638 黑棕 下6.8万保\nS320L 8638 黑黑 红宝石黑棕 下7.5万保\nS350L 94.88 黑米 碳灰蓝棕 下2.5万裸\nS350L 10288黑棕 平价保\nS350L 10288 红宝石黑黑 下5千保\nS450L 12288 黑粽 下2万保 \nS500L 17328 黑棕 下10万保 国6\n卖全国另有迈巴赫",
+											"type": "text"
+										},
+										{
+											"key": "brand_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "18",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/market/update",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"market",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 11:53:00 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"修改成功\",\n    \"data\": \"18\"\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/market/delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "market",
+									"value": "\nC180L 3238 大标 白黑 下4.5万保\nC260L 3508 大标 白米  下4.8万店保\nC260L 3508 大标 宝蓝黑 下4.1万店保\nC260L 3508 大标 白黑 下3.7万裸 选双屏\nC260L 3508 小标 白黑 下4万裸\nC260 3688 白黑 下6万保\nC260 3688 白黑 白红 下4.5万裸\nC300L 4868 大标 白黑 下4万店保\n \nE200L4358 大标 白黑 下3.5万保 选全景\nE300L4758 大标 白棕 下3万裸\nGLA200 2888 白黑 宝蓝黑 下5.3万店保\nGLA220 3248 白黑 红黑 下6.3万店保\n \nGLC260L 4298 红棕 红黑下2.5万裸\nGLC260L 4298 白黑 下2万裸 选智乐\nGLC260L 445  红黑 下3万裸 \nGLC300L 4898 红棕 灰黑 下3.2万裸\nGLC300L 4898 白黑 红黑 下3.8万保\nGLC300L 576  白黑 下7.3万保\n \nGLS400 10758 黑棕 黑黑 下9.8万裸19款\nGLS400 12498 黑棕 黑黑 下9.8万裸19款\nS320L 8638 黑棕 下6.8万保\nS320L 8638 黑黑 红宝石黑棕 下7.5万保\nS350L 94.88 黑米 碳灰蓝棕 下2.5万裸\nS350L 10288黑棕 平价保\nS350L 10288 红宝石黑黑 下5千保\nS450L 12288 黑粽 下2万保 \nS500L 17328 黑棕 下10万保 国6\n卖全国另有迈巴赫",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "17",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/market/delete",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"market",
+								"delete"
+							]
+						},
+						"description": "删除需求"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/market/delete",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "market",
+											"value": "\nC180L 3238 大标 白黑 下4.5万保\nC260L 3508 大标 白米  下4.8万店保\nC260L 3508 大标 宝蓝黑 下4.1万店保\nC260L 3508 大标 白黑 下3.7万裸 选双屏\nC260L 3508 小标 白黑 下4万裸\nC260 3688 白黑 下6万保\nC260 3688 白黑 白红 下4.5万裸\nC300L 4868 大标 白黑 下4万店保\n \nE200L4358 大标 白黑 下3.5万保 选全景\nE300L4758 大标 白棕 下3万裸\nGLA200 2888 白黑 宝蓝黑 下5.3万店保\nGLA220 3248 白黑 红黑 下6.3万店保\n \nGLC260L 4298 红棕 红黑下2.5万裸\nGLC260L 4298 白黑 下2万裸 选智乐\nGLC260L 445  红黑 下3万裸 \nGLC300L 4898 红棕 灰黑 下3.2万裸\nGLC300L 4898 白黑 红黑 下3.8万保\nGLC300L 576  白黑 下7.3万保\n \nGLS400 10758 黑棕 黑黑 下9.8万裸19款\nGLS400 12498 黑棕 黑黑 下9.8万裸19款\nS320L 8638 黑棕 下6.8万保\nS320L 8638 黑黑 红宝石黑棕 下7.5万保\nS350L 94.88 黑米 碳灰蓝棕 下2.5万裸\nS350L 10288黑棕 平价保\nS350L 10288 红宝石黑黑 下5千保\nS450L 12288 黑粽 下2万保 \nS500L 17328 黑棕 下10万保 国6\n卖全国另有迈巴赫",
+											"type": "text"
+										},
+										{
+											"key": "brand_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "17",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/market/delete",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"market",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 11:51:35 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"删除成功\"\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/market/my_like",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "18",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/market/my_like",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"market",
+								"my_like"
+							]
+						},
+						"description": "我收藏的车源"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/market/my_like",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/market/my_like",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"market",
+										"my_like"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 12:14:42 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 18,\n            \"user_id\": 17074,\n            \"brand_id\": 1,\n            \"market\": \"C180L 3238 大标 白黑 下4.5万保\\nC260L 3508 大标 白米  下4.8万店保\\nC260L 3508 大标 宝蓝黑 下4.1万店保\\nC260L 3508 大标 白黑 下3.7万裸 选双屏\\nC260L 3508 小标 白黑 下4万裸\\nC260 3688 白黑 下6万保\\nC260 3688 白黑 白红 下4.5万裸\\nC300L 4868 大标 白黑 下4万店保\\n \\nE200L4358 大标 白黑 下3.5万保 选全景\\nE300L4758 大标 白棕 下3万裸\\nGLA200 2888 白黑 宝蓝黑 下5.3万店保\\nGLA220 3248 白黑 红黑 下6.3万店保\\n \\nGLC260L 4298 红棕 红黑下2.5万裸\\nGLC260L 4298 白黑 下2万裸 选智乐\\nGLC260L 445  红黑 下3万裸 \\nGLC300L 4898 红棕 灰黑 下3.2万裸\\nGLC300L 4898 白黑 红黑 下3.8万保\\nGLC300L 576  白黑 下7.3万保\\n \\nGLS400 10758 黑棕 黑黑 下9.8万裸19款\\nGLS400 12498 黑棕 黑黑 下9.8万裸19款\\nS320L 8638 黑棕 下6.8万保\\nS320L 8638 黑黑 红宝石黑棕 下7.5万保\\nS350L 94.88 黑米 碳灰蓝棕 下2.5万裸\\nS350L 10288黑棕 平价保\\nS350L 10288 红宝石黑黑 下5千保\\nS450L 12288 黑粽 下2万保 \\nS500L 17328 黑棕 下10万保 国6\\n卖全国另有迈巴赫\",\n            \"create_time\": 1554004364,\n            \"update_time\": 1554004380,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"photos\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/market/like",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "18",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/market/like",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"market",
+								"like"
+							]
+						},
+						"description": "收藏车源"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/market/like",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "18",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/market/like",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"market",
+										"like"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 12:14:29 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/market/unlike",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "18",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/market/unlike",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"market",
+								"unlike"
+							]
+						},
+						"description": "删除收藏车源"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/market/unlike",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "18",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/market/unlike",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"market",
+										"unlike"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 12:14:50 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/market/my",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/market/my",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"market",
+								"my"
+							]
+						},
+						"description": "我的车源"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/market/my",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/market/my",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"market",
+										"my"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 12:13:41 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 18,\n            \"user_id\": 17074,\n            \"brand_id\": 1,\n            \"market\": \"C180L 3238 大标 白黑 下4.5万保\\nC260L 3508 大标 白米  下4.8万店保\\nC260L 3508 大标 宝蓝黑 下4.1万店保\\nC260L 3508 大标 白黑 下3.7万裸 选双屏\\nC260L 3508 小标 白黑 下4万裸\\nC260 3688 白黑 下6万保\\nC260 3688 白黑 白红 下4.5万裸\\nC300L 4868 大标 白黑 下4万店保\\n \\nE200L4358 大标 白黑 下3.5万保 选全景\\nE300L4758 大标 白棕 下3万裸\\nGLA200 2888 白黑 宝蓝黑 下5.3万店保\\nGLA220 3248 白黑 红黑 下6.3万店保\\n \\nGLC260L 4298 红棕 红黑下2.5万裸\\nGLC260L 4298 白黑 下2万裸 选智乐\\nGLC260L 445  红黑 下3万裸 \\nGLC300L 4898 红棕 灰黑 下3.2万裸\\nGLC300L 4898 白黑 红黑 下3.8万保\\nGLC300L 576  白黑 下7.3万保\\n \\nGLS400 10758 黑棕 黑黑 下9.8万裸19款\\nGLS400 12498 黑棕 黑黑 下9.8万裸19款\\nS320L 8638 黑棕 下6.8万保\\nS320L 8638 黑黑 红宝石黑棕 下7.5万保\\nS350L 94.88 黑米 碳灰蓝棕 下2.5万裸\\nS350L 10288黑棕 平价保\\nS350L 10288 红宝石黑黑 下5千保\\nS450L 12288 黑粽 下2万保 \\nS500L 17328 黑棕 下10万保 国6\\n卖全国另有迈巴赫\",\n            \"create_time\": 1554004364,\n            \"update_time\": 1554004380,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"photos\": null,\n            \"brand_name\": \"奔驰\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd9d4b4303.png\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "报价",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8000/purchase/ask/quote",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/ask/quote?ask_id=14",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"ask",
+								"quote"
+							],
+							"query": [
+								{
+									"key": "ask_id",
+									"value": "14"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/ask/quote",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/ask/quote?ask_id=14",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"ask",
+										"quote"
+									],
+									"query": [
+										{
+											"key": "ask_id",
+											"value": "14"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 17:21:34 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 31,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"55\",\n            \"note\": \"有保险\",\n            \"create_time\": 1554023341,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 30,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"55\",\n            \"note\": \"有保险\",\n            \"create_time\": 1554023273,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 29,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"55\",\n            \"note\": \"有保险\",\n            \"create_time\": 1554023071,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 28,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"55\",\n            \"note\": \"有保险\",\n            \"create_time\": 1554022873,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 27,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"2\",\n            \"note\": \"\",\n            \"create_time\": 1552961271,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 18,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"2\",\n            \"note\": \"包\",\n            \"create_time\": 1552647661,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 7,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"88\",\n            \"note\": \"保险。购置税\",\n            \"create_time\": 1552105563,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "http://127.0.0.1:8000/purchase/ask/quote",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/ask/quote?ask_id=14",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"ask",
+										"quote"
+									],
+									"query": [
+										{
+											"key": "ask_id",
+											"value": "14"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 17:20:51 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 31,\n            \"update_time\": null,\n            \"create_time\": 1554023341,\n            \"note\": \"有保险\",\n            \"car_price\": \"55\",\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 30,\n            \"update_time\": null,\n            \"create_time\": 1554023273,\n            \"note\": \"有保险\",\n            \"car_price\": \"55\",\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 29,\n            \"update_time\": null,\n            \"create_time\": 1554023071,\n            \"note\": \"有保险\",\n            \"car_price\": \"55\",\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 28,\n            \"update_time\": null,\n            \"create_time\": 1554022873,\n            \"note\": \"有保险\",\n            \"car_price\": \"55\",\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 27,\n            \"update_time\": null,\n            \"create_time\": 1552961271,\n            \"note\": \"\",\n            \"car_price\": \"2\",\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 18,\n            \"update_time\": null,\n            \"create_time\": 1552647661,\n            \"note\": \"包\",\n            \"car_price\": \"2\",\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        },\n        {\n            \"id\": 7,\n            \"update_time\": null,\n            \"create_time\": 1552105563,\n            \"note\": \"保险。购置税\",\n            \"car_price\": \"88\",\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\",\n            \"company_name\": \"喜羊羊科技有限公司\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/quote/save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ask_id",
+									"value": "14",
+									"type": "text"
+								},
+								{
+									"key": "car_price",
+									"value": "55",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "有保险",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/quote/save",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"quote",
+								"save"
+							]
+						},
+						"description": "新增报价"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/quote/save",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "ask_id",
+											"value": "14",
+											"type": "text"
+										},
+										{
+											"key": "car_price",
+											"value": "55",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "有保险",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/quote/save",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"quote",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 17:07:53 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"报价成功\"\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/quote/my",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ask_id",
+									"value": "14",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/quote/my",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"quote",
+								"my"
+							]
+						},
+						"description": "我的报价"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/quote/my",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/quote/my",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"quote",
+										"my"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 23:17:11 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"img\": null,\n            \"brand_name\": null,\n            \"id\": 30,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"55\",\n            \"note\": \"有保险\",\n            \"create_time\": 1554023273,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0\n        },\n        {\n            \"img\": null,\n            \"brand_name\": null,\n            \"id\": 29,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"55\",\n            \"note\": \"有保险\",\n            \"create_time\": 1554023071,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0\n        },\n        {\n            \"img\": null,\n            \"brand_name\": null,\n            \"id\": 28,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"55\",\n            \"note\": \"有保险\",\n            \"create_time\": 1554022873,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0\n        },\n        {\n            \"img\": null,\n            \"brand_name\": null,\n            \"id\": 27,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"2\",\n            \"note\": \"\",\n            \"create_time\": 1552961271,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0\n        },\n        {\n            \"img\": null,\n            \"brand_name\": null,\n            \"id\": 18,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"2\",\n            \"note\": \"包\",\n            \"create_time\": 1552647661,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0\n        },\n        {\n            \"img\": null,\n            \"brand_name\": null,\n            \"id\": 7,\n            \"ask_id\": 14,\n            \"user_id\": 17074,\n            \"car_price\": \"88\",\n            \"note\": \"保险。购置税\",\n            \"create_time\": 1552105563,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_delete\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/quote/delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "31",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/quote/delete",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"quote",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/quote/delete",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "31",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/quote/delete",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"quote",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 17:22:46 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"code\": 400,\n    \"msg\": \"删除失败\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "需求",
+			"item": [
+				{
+					"name": "http://127.0.0.1:8000/purchase/ask/index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/ask/index?key_word=保时捷&page_num=1&page_size=10&brand_id=184",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"ask",
+								"index"
+							],
+							"query": [
+								{
+									"key": "key_word",
+									"value": "保时捷"
+								},
+								{
+									"key": "page_num",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "10"
+								},
+								{
+									"key": "brand_id",
+									"value": "184"
+								}
+							]
+						},
+						"description": "全部需求"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/ask/index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/ask/index?key_word=保时捷&page_num=1&page_size=10",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"ask",
+										"index"
+									],
+									"query": [
+										{
+											"key": "key_word",
+											"value": "保时捷"
+										},
+										{
+											"key": "page_num",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 12:22:12 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 23,\n            \"user_id\": 3,\n            \"brand_id\": 184,\n            \"car_name\": \"Cayman\",\n            \"car_price\": \"444\",\n            \"car_product_time\": \"2019-03-19\",\n            \"province\": \"广东省\",\n            \"city\": \"佛山市\",\n            \"region\": \"顺德区\",\n            \"car_color\": \"333\",\n            \"car_level\": \"222\",\n            \"note\": \"\",\n            \"create_time\": 1552963488,\n            \"update_time\": null,\n            \"status\": 1,\n            \"is_complete\": 0,\n            \"is_display\": 1,\n            \"is_delete\": 0,\n            \"name\": \"冯小姐\",\n            \"phone\": \"13798674252\",\n            \"brand_name\": \"保时捷\",\n            \"img\": \"/putao/Public/Uploads/thumb_58bfd72a6193f.png\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/ask/read",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/ask/read?id=23",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"ask",
+								"read"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "23"
+								}
+							]
+						},
+						"description": "单个需求"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/ask/read",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/ask/read?id=23",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"ask",
+										"read"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "23"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 12:25:32 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"id\": 23,\n        \"user_id\": 3,\n        \"brand_id\": 184,\n        \"car_name\": \"Cayman\",\n        \"car_price\": \"444\",\n        \"car_product_time\": \"2019-03-19\",\n        \"province\": \"广东省\",\n        \"city\": \"佛山市\",\n        \"region\": \"顺德区\",\n        \"car_color\": \"333\",\n        \"car_level\": \"222\",\n        \"note\": \"\",\n        \"create_time\": 1552963488,\n        \"update_time\": null,\n        \"status\": 1,\n        \"is_complete\": 0,\n        \"is_display\": 1,\n        \"is_delete\": 0,\n        \"name\": \"冯小姐\",\n        \"phone\": \"13798674252\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/ask/save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "car_name",
+									"value": "C200L",
+									"type": "text"
+								},
+								{
+									"key": "car_price",
+									"value": "4000",
+									"type": "text"
+								},
+								{
+									"key": "car_product_time",
+									"value": "2019-03-22",
+									"type": "text"
+								},
+								{
+									"key": "province",
+									"value": "广东省",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "佛山市",
+									"type": "text"
+								},
+								{
+									"key": "region",
+									"value": "顺德区",
+									"type": "text"
+								},
+								{
+									"key": "car_color",
+									"value": "黑/黑",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "备注信息",
+									"type": "text"
+								},
+								{
+									"key": "car_level",
+									"value": "配置",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/ask/save",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"ask",
+								"save"
+							]
+						},
+						"description": "新增需求"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/ask/save",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "brand_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "car_name",
+											"value": "C200L",
+											"type": "text"
+										},
+										{
+											"key": "car_price",
+											"value": "4000",
+											"type": "text"
+										},
+										{
+											"key": "car_product_time",
+											"value": "2019-03-22",
+											"type": "text"
+										},
+										{
+											"key": "province",
+											"value": "广东省",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "佛山市",
+											"type": "text"
+										},
+										{
+											"key": "region",
+											"value": "顺德区",
+											"type": "text"
+										},
+										{
+											"key": "car_color",
+											"value": "黑/黑",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "备注信息",
+											"type": "text"
+										},
+										{
+											"key": "car_level",
+											"value": "配置",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/ask/save",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"ask",
+										"save"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 12:43:28 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"发布成功\",\n    \"data\": \"24\"\n}"
+						}
+					]
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/ask/my",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/ask/my",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"ask",
+								"my"
+							]
+						},
+						"description": "我的需求"
+					},
+					"response": []
+				},
+				{
+					"name": "http://127.0.0.1:8000/purchase/ask/update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "car_name",
+									"value": "C180",
+									"type": "text"
+								},
+								{
+									"key": "car_price",
+									"value": "4000",
+									"type": "text"
+								},
+								{
+									"key": "car_product_time",
+									"value": "2019-03-22",
+									"type": "text"
+								},
+								{
+									"key": "province",
+									"value": "广东省",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "佛山市",
+									"type": "text"
+								},
+								{
+									"key": "region",
+									"value": "顺德区",
+									"type": "text"
+								},
+								{
+									"key": "car_color",
+									"value": "黑/黑",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "备注信息",
+									"type": "text"
+								},
+								{
+									"key": "car_level",
+									"value": "配置",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "24",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/purchase/ask/update",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"purchase",
+								"ask",
+								"update"
+							]
+						},
+						"description": "编辑需求"
+					},
+					"response": [
+						{
+							"name": "http://127.0.0.1:8000/purchase/ask/update",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Putao-Signature",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTM5OTg4MTEsImV4cCI6MTU1NDA4NTIxMSwidWlkIjoiMTcwNzQifQ.OuBX6Efq0Os2HE6XqwhOtXei49Qjos2DHB_N3jmKWyYsSMJtb69Z8s3_sXwlYiUpH5bcUODxCvMmAnK1QIG9BdYK-Jr0eulSdpN_VQIJcEQlbuWj6K0tHmZQiTo8KNmXYHEuTUjjP22mTKMEfPMVKAJB-7pRuAIdV_YZ3ABXoa4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "brand_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "car_name",
+											"value": "C180",
+											"type": "text"
+										},
+										{
+											"key": "car_price",
+											"value": "4000",
+											"type": "text"
+										},
+										{
+											"key": "car_product_time",
+											"value": "2019-03-22",
+											"type": "text"
+										},
+										{
+											"key": "province",
+											"value": "广东省",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "佛山市",
+											"type": "text"
+										},
+										{
+											"key": "region",
+											"value": "顺德区",
+											"type": "text"
+										},
+										{
+											"key": "car_color",
+											"value": "黑/黑",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "备注信息",
+											"type": "text"
+										},
+										{
+											"key": "car_level",
+											"value": "配置",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "24",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/purchase/ask/update",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"purchase",
+										"ask",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Mar 2019 12:49:22 +0800"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"编辑成功\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "平行进口",
+			"item": [
+				{
+					"name": "fuck.u/purchase/imported/index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "fuck.u/purchase/imported/index?key_word=总裁&page_num=1&page_size=10&brand_id=11",
+							"host": [
+								"fuck",
+								"u"
+							],
+							"path": [
+								"purchase",
+								"imported",
+								"index"
+							],
+							"query": [
+								{
+									"key": "key_word",
+									"value": "总裁"
+								},
+								{
+									"key": "page_num",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "10"
+								},
+								{
+									"key": "brand_id",
+									"value": "11"
+								}
+							]
+						},
+						"description": "获取平行进口"
+					},
+					"response": [
+						{
+							"name": "fuck.u/purchase/imported/index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "fuck.u/purchase/imported/index?key_word=总裁&page_num=1&page_size=10&brand_id=11",
+									"host": [
+										"fuck",
+										"u"
+									],
+									"path": [
+										"purchase",
+										"imported",
+										"index"
+									],
+									"query": [
+										{
+											"key": "key_word",
+											"value": "总裁"
+										},
+										{
+											"key": "page_num",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "10"
+										},
+										{
+											"key": "brand_id",
+											"value": "11"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.11.5"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Apr 2019 09:51:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": [\n        {\n            \"id\": 13,\n            \"user_id\": 17074,\n            \"car_name\": \"总裁 18款 3.0T 350Hp 豪华 杰尼亚\",\n            \"car_level\": \"中规现车\",\n            \"car_color\": \"黑/黑\",\n            \"car_procedure\": \"手续齐一周内\",\n            \"photos\": \"/201903/c83c862170a41138f8d8bfaba53167db.jpg,/201903/840110e6a8ec5fb7550a7e889a28cedb.jpg,/201903/9defabba2f9dfd1bfb4e8b4f820c6810.jpg,/201903/fce0d9ca4eecbc3f5d978d80b9548d72.jpg,/201903/00026451efbcdce3432beb21fee4aa0b.jpg\",\n            \"note\": \"B4-1098 黑色 绿色人 红色 棕色 灰色\",\n            \"car_price\": \"71.37\",\n            \"create_time\": 1553964304,\n            \"update_time\": null,\n            \"brand_id\": 11,\n            \"status\": 1,\n            \"is_delete\": 0,\n            \"company_name\": \"喜羊羊科技有限公司\",\n            \"name\": \"盛盛\",\n            \"phone\": \"18680026210\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "fuck.u/purchase/imported/read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "fuck.u/purchase/imported/read?id=5",
+							"host": [
+								"fuck",
+								"u"
+							],
+							"path": [
+								"purchase",
+								"imported",
+								"read"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						},
+						"description": "单个平行进口"
+					},
+					"response": [
+						{
+							"name": "fuck.u/purchase/imported/read",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "fuck.u/purchase/imported/read?id=5",
+									"host": [
+										"fuck",
+										"u"
+									],
+									"path": [
+										"purchase",
+										"imported",
+										"read"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.11.5"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Apr 2019 09:51:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.2.1"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 1,\n    \"code\": 200,\n    \"msg\": \"success\",\n    \"data\": {\n        \"id\": 5,\n        \"user_id\": 4,\n        \"car_name\": \"总裁 18款 3.0T 350Hp 豪华 杰尼亚\",\n        \"car_level\": \"中规现车\",\n        \"car_color\": \"黑/黑\",\n        \"car_procedure\": \"手续齐一周内\",\n        \"photos\": \"/201903/c83c862170a41138f8d8bfaba53167db.jpg,/201903/840110e6a8ec5fb7550a7e889a28cedb.jpg,/201903/9defabba2f9dfd1bfb4e8b4f820c6810.jpg,/201903/fce0d9ca4eecbc3f5d978d80b9548d72.jpg,/201903/00026451efbcdce3432beb21fee4aa0b.jpg\",\n        \"note\": \"B4-1098 黑色 绿色人 红色 棕色 灰色\",\n        \"car_price\": \"71.37\",\n        \"create_time\": 1553964304,\n        \"update_time\": null,\n        \"brand_id\": 163,\n        \"status\": 1,\n        \"is_delete\": 0,\n        \"company_name\": null,\n        \"name\": \"梁\",\n        \"phone\": \"13925490468\",\n        \"brand_name\": \"路虎进口\",\n        \"img\": \"/putao/Public/Uploads/thumb_58bfd7729b454.png\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "fuck.u/purchase/imported/save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Putao-Signature",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1NTQxMDUwNTksImV4cCI6MTU1NDE5MTQ1OSwidWlkIjoxNzA3NH0.pz0sFbRemTRAe6WBedJ7r8-uv-cO9Yw_V7kpZbzkkrRBEP31OAqK5K0Mb8994ipGOShmiTdSU1ma25wXOcSK9OYBX_XR84KwUA4UpyXrP22YlhM29GM71Y866xPsMWtgTC1YAliw969O1IJLL762pWiXOp7tqw_dILfSHp0K8mc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "car_price",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "car_procedure",
+									"value": "手续全",
+									"type": "text"
+								},
+								{
+									"key": "car_level",
+									"value": "中规-",
+									"type": "text"
+								},
+								{
+									"key": "photos",
+									"value": "['/201903/c83c862170a41138f8d8bfaba53167db.jpg,/201903/840110e6a8ec5fb7550a7e889a28cedb.jpg,/201903/9defabba2f9dfd1bfb4e8b4f820c6810.jpg',/201903/fce0d9ca4eecbc3f5d978d80b9548d72.jpg,/201903/00026451efbcdce3432beb21fee4aa0b.jpg",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "22",
+									"type": "text"
+								},
+								{
+									"key": "car_name",
+									"value": "奔驰2019",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "fuck.u/purchase/imported/save",
+							"host": [
+								"fuck",
+								"u"
+							],
+							"path": [
+								"purchase",
+								"imported",
+								"save"
+							]
+						},
+						"description": "新建平行进口"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
