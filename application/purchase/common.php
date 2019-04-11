@@ -15,3 +15,9 @@ function getUserId()
 
 	return $jwt->uid;
 }
+
+function getCompanyId($uid)
+{
+	$UserRelation = new \app\purchase\model\UserRelation;
+	return $UserRelation->where(['user_id'=>$uid])->value('company_id');
+}
