@@ -21,6 +21,7 @@ class Ask extends Base
 	public function quote($ask_id,Quote $Quote,AskModel $Ask)
 	{
 		$uid = request()->uid;
+
         // 如果我是需求者，我可以看报价
         $res = $Ask->field('id')->get(['user_id'=>$uid,'id'=>$ask_id]);
         if ($res) {
@@ -125,6 +126,7 @@ class Ask extends Base
 	public function save(AskModel $Ask)
 	{
 		$uid = request()->uid;
+        $company_id = getCompanyId($uid);
         
         $data = $this->request->only('brand_id,car_name,car_price,car_product_time,province,city,region,car_color,note,car_level');
 
@@ -136,6 +138,7 @@ class Ask extends Base
         }
         // 插入数据库
         $data['user_id'] = $uid;
+        $data['company_id'] = $company_id;
         $data['create_time'] = time();
         $ask_id = $Ask->insertGetId($data);
         if ($ask_id) {
