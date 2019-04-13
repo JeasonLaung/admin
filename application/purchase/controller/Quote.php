@@ -12,7 +12,7 @@ class Quote extends Base
 		$uid = request()->uid;
 
 		$data = $this->request->only('car_price,note,ask_id');
-		$fromId = input('formId');
+		// $fromId = input('formId');
         // return json($data);
 
         // 数据验证
@@ -37,17 +37,17 @@ class Quote extends Base
         $ask_id = $data['ask_id'];
 
         behavior('\app\purchase\behavior\CreateMsg',[
-            'cmd'=>'quote',
+			'cmd'=>'quote',
+			'to_id'=>$from_id,
             'data'=>[
             	'uid'=>$uid,
-                'user_id'=>$from_id,
                 'ask_id'=>$ask_id,
                 'quote_id'=>$quote_id,
                 'car_price'=>$data['car_price'],
                 'note'=>$data['note']
             ],
-            'formId'=>$formId
-        ]);
+		]);
+		
         if ($res) {
         	return success('','报价成功');
         }

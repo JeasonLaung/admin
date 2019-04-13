@@ -20,6 +20,20 @@ return [
     'username'        => 'suibian',
     // 密码
     'password'        => '123456',
+
+
+    // 'hostname'        => '94.191.69.72',
+    // // 数据库名
+    // 'database'        => 'jeason',
+    // // 用户名
+    // 'username'        => 'jeason',
+    // // 密码
+    // 'password'        => 's7A2aT2wxFBYsj4b',
+
+
+
+
+
     // 端口
     'hostport'        => '3306',
     // 连接dsn

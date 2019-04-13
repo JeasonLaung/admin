@@ -6,6 +6,18 @@ use EasyWeChat\Factory;
 // define("TOKEN", "jeasonlaung");
 // 
 class Index extends Controller {
+    public function test() {
+        $data['nonceStr'] = '321123';
+        $data['sign'] = md5('PuTaoPwd'.$data['nonceStr']);
+        $data['msgId'] = 'OL9oC6DivKrYjDptJQqxj5koojHx0zIDLezTW8jiLzM';
+        $data['info']['first'] = '测试中奖';
+        $data['info']['keyword1'] = '梁志盛中奖了';
+        $data['info']['keyword2'] = '中了k头奖';
+        $data['info']['keyword3'] = date('Y-m-d H:i:s',time());
+        $data['info']['last'] = '发神经吗！';
+        $res = \Curl::post('http://www.mputao.com/putao/Member/Test/tempTest',$data,false);
+        dump($res);
+    }
     public function index($code,$encryptData,$iv)
     {
         // $iv = "2LzDVOYGZVEgHhkJR6kKTA==";

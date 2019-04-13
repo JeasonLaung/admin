@@ -49,6 +49,7 @@ class Login extends \think\Controller
         $user_info = $this->decode($encryptedData,$iv);
          /*更改*/
         $openid = $user_info['openId'];
+        $unionid = $user_info['unionId'];
        /**/
 
        /*终极目标未手机*/
@@ -65,7 +66,7 @@ class Login extends \think\Controller
             //存unionid
             $res = $User
             ->where('id',$user['id'])
-            ->data(['wxunionid'=>$openid])
+            ->data(['wxunionid'=>$unionid,'purchase_wx_openid'=>$openid])
             ->update();
 
             // 然后插入user_relation
@@ -84,7 +85,7 @@ class Login extends \think\Controller
         }
         else {
             // 不存在整条数据插入
-            $data = ['phone'=>$phone,'wxunionid'=>$openid,'nickname' => $user_info['nickName'],'name' => $user_info['nickName']];
+            $data = ['phone'=>$phone,'wxunionid'=>$unionid,'purchase_wx_openid'=>$openid,'nickname' => $user_info['nickName']];
             
             $uid = $User->insertGetId($data);
 
@@ -105,13 +106,6 @@ class Login extends \think\Controller
             }
 
         }
-
-
-
-
-
-
-
         
         // $session_arr = \Curl::get(sprintf(self::code2Session,config('APP_ID'),config('APP_SECRET'),$code));
         // $session = @json_decode($session_arr,true)['session_key'];
@@ -121,6 +115,7 @@ class Login extends \think\Controller
         // $decryptedData = $app->encryptor->decryptData($session, $iv, $encryptedData);
         // halt($decryptedData);
     }
+
 
 
     public function info(UserModel $User)
@@ -135,7 +130,7 @@ class Login extends \think\Controller
         // $uid = request()->uid;
         $user = $User
         ->alias('u')
-        ->field('u.phone,u.name,u.nickname,c.company_name,c.id as company_id,u.id,c.group_id as role,ur.is_admin')
+        ->field('u.phone,u.nickname as name,c.company_name,c.id as company_id,u.id,c.group_id as role,ur.is_admin')
         ->join('purchase_user_relation ur', 'ur.user_id = u.id')
         ->join('purchase_company c', 'c.id = ur.company_id','LEFT')
         ->where('u.id',$uid)
@@ -166,7 +161,7 @@ class Login extends \think\Controller
         ->alias('u')
 		->field('id')
         ->join('purchase_user_relation','user_id = u.id')
-		->where(['wxunionid'=>$openid])
+		->where(['purchase_wx_openid'=>$openid])
 		->find();
 		if (empty($user)) {
 			//不存在用户返回需要登陆信息
@@ -180,6 +175,50 @@ class Login extends \think\Controller
         return json(['status'=>1])->header([SIGN_NAME=>$jwt,'X-Putao-Session'=>$this->session_key])->send();
 	}
 
+    //获取openid获取unionid
+    private function getOpenId($code){
+        $api = sprintf(self::code2Session ,config('APP_ID'),config('APP_SECRET'), $code);
+        
+        //获取到openid和session_key
+        $res = \Curl::get($api);
+        $res = json_decode($res,true);
+        // dump($res);
+        // 提取openid
+        $openid = @$res['openid'];
+        $this->session_key = @$res['session_key'];
+
+        // 没有openid的情况
+        if(!$openid){
+            return error('无法获取openid',500);
+        }
+        
+        //获取openid成功返回
+        return $openid;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*废弃*/
 	// 发送验证码
 	public function captcha(UserModel $User)
     {
@@ -206,6 +245,7 @@ class Login extends \think\Controller
         }
     }
 
+    /*废弃*/
     //注册/手机登录
 	public function register($phone,$captcha,$code='',$nickname='',UserModel $User,UserRelation $UserRelation)
 	{
@@ -277,24 +317,5 @@ class Login extends \think\Controller
 
 	}
 
-	//获取openid获取unionid
-    private function getOpenId($code){
-        $api = sprintf(self::code2Session ,config('APP_ID'),config('APP_SECRET'), $code);
-        
-        //获取到openid和session_key
-        $res = \Curl::get($api);
-        $res = json_decode($res,true);
-        // dump($res);
-        // 提取openid
-        $openid = @$res['openid'];
-        $this->session_key = @$res['session_key'];
-
-        // 没有openid的情况
-        if(!$openid){
-            return error('无法获取openid',500);
-        }
-        
-        //获取openid成功返回
-        return $openid;
-    }
+	
 }
